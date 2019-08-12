@@ -13,6 +13,8 @@
 		923EB1512301C9AD003B90D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923EB1502301C9AD003B90D7 /* Assets.xcassets */; };
 		923EB1542301C9AD003B90D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EB1522301C9AD003B90D7 /* LaunchScreen.storyboard */; };
 		923EB15F2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB15E2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift */; };
+		923EB16F2301CFDA003B90D7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB16E2301CFDA003B90D7 /* DefaultButton.swift */; };
+		923EB1712301D3CE003B90D7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1702301D3CE003B90D7 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		923EB15A2301C9AD003B90D7 /* Traffic Laws ExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Traffic Laws ExamTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		923EB15E2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traffic_Laws_ExamTests.swift; sourceTree = "<group>"; };
 		923EB1602301C9AD003B90D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		923EB16E2301CFDA003B90D7 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		923EB1702301D3CE003B90D7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		923EB16C2301CE85003B90D7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				923EB1702301D3CE003B90D7 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 		923EB16D2301CF4C003B90D7 /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
+				923EB16E2301CFDA003B90D7 /* DefaultButton.swift */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923EB1712301D3CE003B90D7 /* Utils.swift in Sources */,
 				923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */,
 				923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */,
 				923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */,
+				923EB16F2301CFDA003B90D7 /* DefaultButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
