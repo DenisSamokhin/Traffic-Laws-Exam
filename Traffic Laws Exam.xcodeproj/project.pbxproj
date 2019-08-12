@@ -77,8 +77,12 @@
 		923EB1452301C9AB003B90D7 /* Traffic Laws Exam */ = {
 			isa = PBXGroup;
 			children = (
+				923EB16D2301CF4C003B90D7 /* Custom Controls */,
+				923EB16C2301CE85003B90D7 /* Utils */,
+				923EB16B2301CE7A003B90D7 /* Controllers */,
+				923EB16A2301CE6F003B90D7 /* ViewModels */,
+				923EB1692301CE62003B90D7 /* Models */,
 				923EB1462301C9AB003B90D7 /* AppDelegate.swift */,
-				923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */,
 				923EB1502301C9AD003B90D7 /* Assets.xcassets */,
 				923EB1522301C9AD003B90D7 /* LaunchScreen.storyboard */,
 				923EB1552301C9AD003B90D7 /* Info.plist */,
@@ -94,6 +98,42 @@
 				923EB1602301C9AD003B90D7 /* Info.plist */,
 			);
 			path = "Traffic Laws ExamTests";
+			sourceTree = "<group>";
+		};
+		923EB1692301CE62003B90D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		923EB16A2301CE6F003B90D7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		923EB16B2301CE7A003B90D7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		923EB16C2301CE85003B90D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		923EB16D2301CF4C003B90D7 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Controls";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
