@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1462301C9AB003B90D7 /* AppDelegate.swift */; };
+		923EB1492301C9AB003B90D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1482301C9AB003B90D7 /* ViewController.swift */; };
+		923EB14C2301C9AB003B90D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EB14A2301C9AB003B90D7 /* Main.storyboard */; };
+		923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 923EB14D2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld */; };
+		923EB1512301C9AD003B90D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923EB1502301C9AD003B90D7 /* Assets.xcassets */; };
+		923EB1542301C9AD003B90D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923EB1522301C9AD003B90D7 /* LaunchScreen.storyboard */; };
+		923EB15F2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB15E2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		923EB15B2301C9AD003B90D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 923EB13B2301C9AB003B90D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 923EB1422301C9AB003B90D7;
+			remoteInfo = "Traffic Laws Exam";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		923EB1432301C9AB003B90D7 /* Traffic Laws Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traffic Laws Exam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		923EB1462301C9AB003B90D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		923EB1482301C9AB003B90D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		923EB14B2301C9AB003B90D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		923EB14E2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Traffic_Laws_Exam.xcdatamodel; sourceTree = "<group>"; };
+		923EB1502301C9AD003B90D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		923EB1532301C9AD003B90D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		923EB1552301C9AD003B90D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		923EB15A2301C9AD003B90D7 /* Traffic Laws ExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Traffic Laws ExamTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		923EB15E2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traffic_Laws_ExamTests.swift; sourceTree = "<group>"; };
+		923EB1602301C9AD003B90D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		923EB1402301C9AB003B90D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		923EB1572301C9AD003B90D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		923EB13A2301C9AB003B90D7 = {
+			isa = PBXGroup;
+			children = (
+				923EB1452301C9AB003B90D7 /* Traffic Laws Exam */,
+				923EB15D2301C9AD003B90D7 /* Traffic Laws ExamTests */,
+				923EB1442301C9AB003B90D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		923EB1442301C9AB003B90D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				923EB1432301C9AB003B90D7 /* Traffic Laws Exam.app */,
+				923EB15A2301C9AD003B90D7 /* Traffic Laws ExamTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		923EB1452301C9AB003B90D7 /* Traffic Laws Exam */ = {
+			isa = PBXGroup;
+			children = (
+				923EB1462301C9AB003B90D7 /* AppDelegate.swift */,
+				923EB1482301C9AB003B90D7 /* ViewController.swift */,
+				923EB14A2301C9AB003B90D7 /* Main.storyboard */,
+				923EB1502301C9AD003B90D7 /* Assets.xcassets */,
+				923EB1522301C9AD003B90D7 /* LaunchScreen.storyboard */,
+				923EB1552301C9AD003B90D7 /* Info.plist */,
+				923EB14D2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld */,
+			);
+			path = "Traffic Laws Exam";
+			sourceTree = "<group>";
+		};
+		923EB15D2301C9AD003B90D7 /* Traffic Laws ExamTests */ = {
+			isa = PBXGroup;
+			children = (
+				923EB15E2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift */,
+				923EB1602301C9AD003B90D7 /* Info.plist */,
+			);
+			path = "Traffic Laws ExamTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		923EB1422301C9AB003B90D7 /* Traffic Laws Exam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 923EB1632301C9AD003B90D7 /* Build configuration list for PBXNativeTarget "Traffic Laws Exam" */;
+			buildPhases = (
+				923EB13F2301C9AB003B90D7 /* Sources */,
+				923EB1402301C9AB003B90D7 /* Frameworks */,
+				923EB1412301C9AB003B90D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Traffic Laws Exam";
+			productName = "Traffic Laws Exam";
+			productReference = 923EB1432301C9AB003B90D7 /* Traffic Laws Exam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		923EB1592301C9AD003B90D7 /* Traffic Laws ExamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 923EB1662301C9AD003B90D7 /* Build configuration list for PBXNativeTarget "Traffic Laws ExamTests" */;
+			buildPhases = (
+				923EB1562301C9AD003B90D7 /* Sources */,
+				923EB1572301C9AD003B90D7 /* Frameworks */,
+				923EB1582301C9AD003B90D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				923EB15C2301C9AD003B90D7 /* PBXTargetDependency */,
+			);
+			name = "Traffic Laws ExamTests";
+			productName = "Traffic Laws ExamTests";
+			productReference = 923EB15A2301C9AD003B90D7 /* Traffic Laws ExamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		923EB13B2301C9AB003B90D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = ITLions;
+				TargetAttributes = {
+					923EB1422301C9AB003B90D7 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					923EB1592301C9AD003B90D7 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 923EB1422301C9AB003B90D7;
+					};
+				};
+			};
+			buildConfigurationList = 923EB13E2301C9AB003B90D7 /* Build configuration list for PBXProject "Traffic Laws Exam" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 923EB13A2301C9AB003B90D7;
+			productRefGroup = 923EB1442301C9AB003B90D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				923EB1422301C9AB003B90D7 /* Traffic Laws Exam */,
+				923EB1592301C9AD003B90D7 /* Traffic Laws ExamTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		923EB1412301C9AB003B90D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923EB1542301C9AD003B90D7 /* LaunchScreen.storyboard in Resources */,
+				923EB1512301C9AD003B90D7 /* Assets.xcassets in Resources */,
+				923EB14C2301C9AB003B90D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		923EB1582301C9AD003B90D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		923EB13F2301C9AB003B90D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923EB1492301C9AB003B90D7 /* ViewController.swift in Sources */,
+				923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */,
+				923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		923EB1562301C9AD003B90D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923EB15F2301C9AD003B90D7 /* Traffic_Laws_ExamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		923EB15C2301C9AD003B90D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 923EB1422301C9AB003B90D7 /* Traffic Laws Exam */;
+			targetProxy = 923EB15B2301C9AD003B90D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		923EB14A2301C9AB003B90D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				923EB14B2301C9AB003B90D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		923EB1522301C9AD003B90D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				923EB1532301C9AD003B90D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		923EB1612301C9AD003B90D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		923EB1622301C9AD003B90D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		923EB1642301C9AD003B90D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LLC2KEZXA;
+				INFOPLIST_FILE = "Traffic Laws Exam/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.itlions.Traffic-Laws-Exam";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		923EB1652301C9AD003B90D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LLC2KEZXA;
+				INFOPLIST_FILE = "Traffic Laws Exam/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.itlions.Traffic-Laws-Exam";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		923EB1672301C9AD003B90D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LLC2KEZXA;
+				INFOPLIST_FILE = "Traffic Laws ExamTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.itlions.Traffic-Laws-ExamTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Traffic Laws Exam.app/Traffic Laws Exam";
+			};
+			name = Debug;
+		};
+		923EB1682301C9AD003B90D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LLC2KEZXA;
+				INFOPLIST_FILE = "Traffic Laws ExamTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.itlions.Traffic-Laws-ExamTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Traffic Laws Exam.app/Traffic Laws Exam";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		923EB13E2301C9AB003B90D7 /* Build configuration list for PBXProject "Traffic Laws Exam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923EB1612301C9AD003B90D7 /* Debug */,
+				923EB1622301C9AD003B90D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		923EB1632301C9AD003B90D7 /* Build configuration list for PBXNativeTarget "Traffic Laws Exam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923EB1642301C9AD003B90D7 /* Debug */,
+				923EB1652301C9AD003B90D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		923EB1662301C9AD003B90D7 /* Build configuration list for PBXNativeTarget "Traffic Laws ExamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923EB1672301C9AD003B90D7 /* Debug */,
+				923EB1682301C9AD003B90D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		923EB14D2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				923EB14E2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodel */,
+			);
+			currentVersion = 923EB14E2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodel */;
+			path = Traffic_Laws_Exam.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 923EB13B2301C9AB003B90D7 /* Project object */;
+}
