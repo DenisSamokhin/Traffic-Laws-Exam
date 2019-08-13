@@ -1,0 +1,102 @@
+{
+    "warning" : [
+        {
+            "id" : 1,
+            "question" : {
+                "id" : 1,
+                "icon" : "icon1.png",
+                "category" : "warning",
+                "code" : "1.1",
+                "maxPoints" : 100,
+                "maxTime" : 20
+            },
+            "correctAnswer" : {
+                "id" : 1,
+                "text" : "Железнодорожный переезд со шлагбаумом"
+            },
+            "answers" : [
+                {
+                    "id" : 1,
+                    "text" : "Железнодорожный переезд со шлагбаумом"
+                },
+                {
+                    "id" : 2,
+                    "text" : "Железнодорожный переезд без шлагбаума"
+                },
+                {
+                    "id" : 3,
+                    "text" : "Однопутная железная дорога"
+                }
+            ]
+        },
+        {
+            "id" : 2,
+            "question" : {
+                "id" : 2,
+                "icon" : "icon2.png",
+                "category" : "warning",
+                "code" : "1.2",
+                "maxPoints" : 100,
+                "maxTime" : 20
+            },
+            "correctAnswer" : {
+                "id" : 2,
+                "text" : "Железнодорожный переезд без шлагбаума"
+            },
+            "answers" : [
+                {
+                    "id" : 1,
+                    "text" : "Железнодорожный переезд со шлагбаумом"
+                },
+                {
+                    "id" : 2,
+                    "text" : "Железнодорожный переезд без шлагбаума"
+                },
+                {
+                    "id" : 3,
+                    "text" : "Однопутная железная дорога"
+                }
+            ]
+        },
+        {
+            "id" : 3,
+            "question" : {
+                "id" : 3,
+                "icon" : "icon2.png",
+                "category" : "warning",
+                "code" : "1.3.1",
+                "maxPoints" : 100,
+                "maxTime" : 20
+            },
+            "correctAnswer" : {
+                "id" : 3,
+                "text" : "Однопутная железная дорога"
+            },
+            "answers" : [
+                {
+                    "id" : 1,
+                    "text" : "Железнодорожный переезд со шлагбаумом"
+                },
+                {
+                    "id" : 2,
+                    "text" : "Железнодорожный переезд без шлагбаума"
+                },
+                {
+                    "id" : 3,
+                    "text" : "Однопутная железная дорога"
+                }
+            ]
+        }
+    ],
+    "priority" : [
+    
+    ],
+    "prohibition" : [
+    
+    ],
+    "prescriptive" : [],
+    "special" : [],
+    "information" : [],
+    "service" : [],
+    "additionalInformation" : []
+}
