@@ -17,6 +17,9 @@
 		923EB1712301D3CE003B90D7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1702301D3CE003B90D7 /* Utils.swift */; };
 		923EB1732302BE6E003B90D7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1722302BE6E003B90D7 /* CategoryViewController.swift */; };
 		923EB177230307F3003B90D7 /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB176230307F3003B90D7 /* tests.json */; };
+		923EB17A23031847003B90D7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17923031847003B90D7 /* CoreDataManager.swift */; };
+		923EB17C230324BF003B90D7 /* signs.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17B230324BF003B90D7 /* signs.json */; };
+		923EB17E230325B8003B90D7 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17D230325B8003B90D7 /* categories.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		923EB1702301D3CE003B90D7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		923EB1722302BE6E003B90D7 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		923EB176230307F3003B90D7 /* tests.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tests.json; sourceTree = "<group>"; };
+		923EB17923031847003B90D7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		923EB17B230324BF003B90D7 /* signs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signs.json; sourceTree = "<group>"; };
+		923EB17D230325B8003B90D7 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		923EB1452301C9AB003B90D7 /* Traffic Laws Exam */ = {
 			isa = PBXGroup;
 			children = (
+				923EB1782303182A003B90D7 /* CoreData */,
 				923EB1742302FCB0003B90D7 /* Content */,
 				923EB16D2301CF4C003B90D7 /* Custom Controls */,
 				923EB16C2301CE85003B90D7 /* Utils */,
@@ -160,8 +167,18 @@
 			isa = PBXGroup;
 			children = (
 				923EB176230307F3003B90D7 /* tests.json */,
+				923EB17B230324BF003B90D7 /* signs.json */,
+				923EB17D230325B8003B90D7 /* categories.json */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		923EB1782303182A003B90D7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				923EB17923031847003B90D7 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +264,8 @@
 			files = (
 				923EB1542301C9AD003B90D7 /* LaunchScreen.storyboard in Resources */,
 				923EB1512301C9AD003B90D7 /* Assets.xcassets in Resources */,
+				923EB17C230324BF003B90D7 /* signs.json in Resources */,
+				923EB17E230325B8003B90D7 /* categories.json in Resources */,
 				923EB177230307F3003B90D7 /* tests.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +289,7 @@
 				923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */,
 				923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */,
 				923EB1732302BE6E003B90D7 /* CategoryViewController.swift in Sources */,
+				923EB17A23031847003B90D7 /* CoreDataManager.swift in Sources */,
 				923EB16F2301CFDA003B90D7 /* DefaultButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
