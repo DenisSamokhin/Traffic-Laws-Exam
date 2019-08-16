@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92142B4C2306C2380020F7E8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92142B4B2306C2380020F7E8 /* CategoryModel.swift */; };
+		92142B4E2306D07B0020F7E8 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92142B4D2306D07B0020F7E8 /* CategoryViewModel.swift */; };
 		923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1462301C9AB003B90D7 /* AppDelegate.swift */; };
 		923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */; };
 		923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 923EB14D2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		92142B4B2306C2380020F7E8 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		92142B4D2306D07B0020F7E8 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		923EB1432301C9AB003B90D7 /* Traffic Laws Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traffic Laws Exam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		923EB1462301C9AB003B90D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		923EB16A2301CE6F003B90D7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				92142B4D2306D07B0020F7E8 /* CategoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				923EB1712301D3CE003B90D7 /* Utils.swift in Sources */,
 				923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */,
 				923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */,
+				92142B4E2306D07B0020F7E8 /* CategoryViewModel.swift in Sources */,
 				92142B4C2306C2380020F7E8 /* CategoryModel.swift in Sources */,
 				923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */,
 				923EB1802303436C003B90D7 /* SignModel.swift in Sources */,
