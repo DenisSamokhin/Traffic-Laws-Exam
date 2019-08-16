@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92142B4C2306C2380020F7E8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92142B4B2306C2380020F7E8 /* CategoryModel.swift */; };
 		923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1462301C9AB003B90D7 /* AppDelegate.swift */; };
 		923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */; };
 		923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 923EB14D2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld */; };
@@ -20,6 +21,8 @@
 		923EB17A23031847003B90D7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17923031847003B90D7 /* CoreDataManager.swift */; };
 		923EB17C230324BF003B90D7 /* signs.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17B230324BF003B90D7 /* signs.json */; };
 		923EB17E230325B8003B90D7 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17D230325B8003B90D7 /* categories.json */; };
+		923EB1802303436C003B90D7 /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17F2303436C003B90D7 /* SignModel.swift */; };
+		923EB182230344C5003B90D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB181230344C5003B90D7 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92142B4B2306C2380020F7E8 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		923EB1432301C9AB003B90D7 /* Traffic Laws Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traffic Laws Exam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		923EB1462301C9AB003B90D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		923EB17923031847003B90D7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		923EB17B230324BF003B90D7 /* signs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signs.json; sourceTree = "<group>"; };
 		923EB17D230325B8003B90D7 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		923EB17F2303436C003B90D7 /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
+		923EB181230344C5003B90D7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,8 @@
 		923EB1692301CE62003B90D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				923EB17F2303436C003B90D7 /* SignModel.swift */,
+				92142B4B2306C2380020F7E8 /* CategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				923EB17923031847003B90D7 /* CoreDataManager.swift */,
+				923EB181230344C5003B90D7 /* DataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -287,9 +296,12 @@
 				923EB1712301D3CE003B90D7 /* Utils.swift in Sources */,
 				923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */,
 				923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */,
+				92142B4C2306C2380020F7E8 /* CategoryModel.swift in Sources */,
 				923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */,
+				923EB1802303436C003B90D7 /* SignModel.swift in Sources */,
 				923EB1732302BE6E003B90D7 /* CategoryViewController.swift in Sources */,
 				923EB17A23031847003B90D7 /* CoreDataManager.swift in Sources */,
+				923EB182230344C5003B90D7 /* DataManager.swift in Sources */,
 				923EB16F2301CFDA003B90D7 /* DefaultButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

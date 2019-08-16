@@ -12,7 +12,9 @@ class CategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let list = DataManager.shared.getSignsList()
+        let list2 = DataManager.shared.getCategoriesList()
+        print(list)
         // Do any additional setup after loading the view.
     }
     

@@ -15,3 +15,20 @@ struct ButtonSettings {
         static var DefaultTextColor = UIColor.black
     }
 }
+
+struct Constants {
+    struct JSONKeys {
+        static var id = "id"
+        static var code = "code"
+        static var image = "image"
+        static var title = "title"
+        static var categoryId = "categoryId"
+    }
+    
+    struct CoreDataKeys {
+        static var signs = "SignModel"
+        static var exams = "Exams"
+        static var categories = "Categories"
+        static var profiles = "Profiles"
+    }
+}

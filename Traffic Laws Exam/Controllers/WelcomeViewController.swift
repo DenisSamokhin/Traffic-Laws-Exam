@@ -20,7 +20,7 @@ class WelcomeViewController: UIViewController {
         setUI()
     }
     
-    // MARK: UI
+    // MARK: - UI
     
     func setUI() {
         setupExamButton()
@@ -29,6 +29,7 @@ class WelcomeViewController: UIViewController {
     
     func setupExamButton() {
         examButton.translatesAutoresizingMaskIntoConstraints = false
+        examButton.addTarget(self, action: #selector(goToCategoryVC), for: .touchUpInside)
         self.view.addSubview(examButton)
         
         examButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -47,6 +48,11 @@ class WelcomeViewController: UIViewController {
         profileButton.heightAnchor.constraint(equalTo: examButton.heightAnchor).isActive = true
     }
 
-
+    // MARK: - Navigation
+    
+    @objc func goToCategoryVC() {
+        self.navigationController?.pushViewController(CategoryViewController(), animated: true)
+    }
+    
 }
 

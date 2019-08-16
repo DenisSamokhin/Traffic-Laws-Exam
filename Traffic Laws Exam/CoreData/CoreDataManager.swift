@@ -16,8 +16,34 @@ class CoreDataManager {
         self.modelName = modelName
     }
     
+    // MARK: - Pulling
+    
+    func getSignsList() -> [SignModel] {
+        let request = NSFetchRequest<SignModel>(entityName: Constants.CoreDataKeys.signs)
+        do {
+            let result = try self.privateManagedObjectContext.fetch(request)
+            return result
+        }catch {
+            print("getSignsList() FAILED")
+            return [SignModel]()
+        }
+    }
+    
+    func getCategoriesList() -> [CategoryModel] {
+        let request = NSFetchRequest<CategoryModel>(entityName: Constants.CoreDataKeys.categories)
+        do {
+            let result = try self.privateManagedObjectContext.fetch(request)
+            return result
+        }catch {
+            print("getCategoriesList() FAILED")
+            return [CategoryModel]()
+        }
+    }
+    
+    // MARK: - CoreData Stack
+    
     private lazy var managedObjectModel: NSManagedObjectModel? = {
-        guard let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "mmomd") else {
+        guard let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd") else {
             return nil
         }
         
@@ -59,5 +85,7 @@ class CoreDataManager {
         managedObjectContext.parent = self.privateManagedObjectContext
         return managedObjectContext
     }()
+    
+    
     
 }
