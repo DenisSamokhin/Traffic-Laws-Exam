@@ -82,7 +82,6 @@ extension CategoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
-        //cell.backgroundColor = (indexPath.row % 2 == 0) ? UIColor.green : UIColor.red
         cell.titleLabel.text = (indexPath.section == 1) ? categoryVM.categoriesTitles.last : categoryVM.categoriesTitles[indexPath.row]
         cell.imageView.image = UIImage(named: "test-sign-image")
         return cell
@@ -95,13 +94,12 @@ extension CategoryViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
-        
-        if indexPath.section == 0 {
-            print("Selected category: \(cell.titleLabel.text) with id: \(categoryVM.getID(index: indexPath.row))")
-        }else {
-            // All categories option
-        }
+        //guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
+        let categoryId = (indexPath.section == 0) ? categoryVM.getID(index: indexPath.row) : 0
+        let exam = ExamManager.shared.createExam(categoryId: categoryId)
+        let examVM = ExamViewModel(exam: exam)
+        let examVC = ExamViewController(viewModel: examVM)
+        self.navigationController?.pushViewController(examVC, animated: true)
     }
     
 }

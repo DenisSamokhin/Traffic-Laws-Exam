@@ -85,4 +85,13 @@ class DataManager {
         return cdManager.getCategoriesList()
     }
     
+    // MARK: - Exams
+    
+    func createEmptyExam() -> ExamModel {
+        // Calculate id for new exam object and set it
+        let exam = ExamModel(context: cdManager.mainManagedObjectContext)
+        return exam
+    }
+    
+    
 }

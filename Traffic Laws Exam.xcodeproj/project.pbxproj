@@ -18,13 +18,18 @@
 		923EB16F2301CFDA003B90D7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB16E2301CFDA003B90D7 /* DefaultButton.swift */; };
 		923EB1712301D3CE003B90D7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1702301D3CE003B90D7 /* Utils.swift */; };
 		923EB1732302BE6E003B90D7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB1722302BE6E003B90D7 /* CategoryViewController.swift */; };
-		923EB177230307F3003B90D7 /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB176230307F3003B90D7 /* tests.json */; };
+		923EB177230307F3003B90D7 /* tests DEPRECATED.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB176230307F3003B90D7 /* tests DEPRECATED.json */; };
 		923EB17A23031847003B90D7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17923031847003B90D7 /* CoreDataManager.swift */; };
 		923EB17C230324BF003B90D7 /* signs.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17B230324BF003B90D7 /* signs.json */; };
 		923EB17E230325B8003B90D7 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17D230325B8003B90D7 /* categories.json */; };
 		923EB1802303436C003B90D7 /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17F2303436C003B90D7 /* SignModel.swift */; };
 		923EB182230344C5003B90D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB181230344C5003B90D7 /* DataManager.swift */; };
 		92B11911230AA11A00CA6415 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11910230AA11A00CA6415 /* CategoryCollectionViewCell.swift */; };
+		92B11914230AD9DB00CA6415 /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11913230AD9DB00CA6415 /* ExamViewModel.swift */; };
+		92B11917230ADA3A00CA6415 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11916230ADA3A00CA6415 /* TestModel.swift */; };
+		92B1191A230ADB1500CA6415 /* ExamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B11919230ADB1500CA6415 /* ExamManager.swift */; };
+		92B1191C230ADBBD00CA6415 /* ExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1191B230ADBBD00CA6415 /* ExamModel.swift */; };
+		92B1191E230AE14700CA6415 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1191D230AE14700CA6415 /* ExamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +58,18 @@
 		923EB16E2301CFDA003B90D7 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		923EB1702301D3CE003B90D7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		923EB1722302BE6E003B90D7 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		923EB176230307F3003B90D7 /* tests.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tests.json; sourceTree = "<group>"; };
+		923EB176230307F3003B90D7 /* tests DEPRECATED.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tests DEPRECATED.json"; sourceTree = "<group>"; };
 		923EB17923031847003B90D7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		923EB17B230324BF003B90D7 /* signs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signs.json; sourceTree = "<group>"; };
 		923EB17D230325B8003B90D7 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		923EB17F2303436C003B90D7 /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
 		923EB181230344C5003B90D7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		92B11910230AA11A00CA6415 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		92B11913230AD9DB00CA6415 /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
+		92B11916230ADA3A00CA6415 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		92B11919230ADB1500CA6415 /* ExamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamManager.swift; sourceTree = "<group>"; };
+		92B1191B230ADBBD00CA6415 /* ExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamModel.swift; sourceTree = "<group>"; };
+		92B1191D230AE14700CA6415 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		923EB1452301C9AB003B90D7 /* Traffic Laws Exam */ = {
 			isa = PBXGroup;
 			children = (
+				92B11918230ADAF000CA6415 /* ExamManager */,
 				923EB1782303182A003B90D7 /* CoreData */,
 				923EB1742302FCB0003B90D7 /* Content */,
 				923EB16D2301CF4C003B90D7 /* Custom Controls */,
@@ -131,6 +142,8 @@
 			children = (
 				923EB17F2303436C003B90D7 /* SignModel.swift */,
 				92142B4B2306C2380020F7E8 /* CategoryModel.swift */,
+				92B11916230ADA3A00CA6415 /* TestModel.swift */,
+				92B1191B230ADBBD00CA6415 /* ExamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				92142B4D2306D07B0020F7E8 /* CategoryViewModel.swift */,
+				92B11913230AD9DB00CA6415 /* ExamViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -148,6 +162,7 @@
 			children = (
 				923EB1482301C9AB003B90D7 /* WelcomeViewController.swift */,
 				923EB1722302BE6E003B90D7 /* CategoryViewController.swift */,
+				92B1191D230AE14700CA6415 /* ExamViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,7 +195,7 @@
 		923EB1752302FCBD003B90D7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				923EB176230307F3003B90D7 /* tests.json */,
+				923EB176230307F3003B90D7 /* tests DEPRECATED.json */,
 				923EB17B230324BF003B90D7 /* signs.json */,
 				923EB17D230325B8003B90D7 /* categories.json */,
 			);
@@ -202,6 +217,14 @@
 				92B11910230AA11A00CA6415 /* CategoryCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		92B11918230ADAF000CA6415 /* ExamManager */ = {
+			isa = PBXGroup;
+			children = (
+				92B11919230ADB1500CA6415 /* ExamManager.swift */,
+			);
+			path = ExamManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +312,7 @@
 				923EB1512301C9AD003B90D7 /* Assets.xcassets in Resources */,
 				923EB17C230324BF003B90D7 /* signs.json in Resources */,
 				923EB17E230325B8003B90D7 /* categories.json in Resources */,
-				923EB177230307F3003B90D7 /* tests.json in Resources */,
+				923EB177230307F3003B90D7 /* tests DEPRECATED.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +332,12 @@
 			files = (
 				923EB1712301D3CE003B90D7 /* Utils.swift in Sources */,
 				923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */,
+				92B11914230AD9DB00CA6415 /* ExamViewModel.swift in Sources */,
+				92B1191E230AE14700CA6415 /* ExamViewController.swift in Sources */,
+				92B1191A230ADB1500CA6415 /* ExamManager.swift in Sources */,
+				92B11917230ADA3A00CA6415 /* TestModel.swift in Sources */,
 				923EB1472301C9AB003B90D7 /* AppDelegate.swift in Sources */,
+				92B1191C230ADBBD00CA6415 /* ExamModel.swift in Sources */,
 				92142B4E2306D07B0020F7E8 /* CategoryViewModel.swift in Sources */,
 				92B11911230AA11A00CA6415 /* CategoryCollectionViewCell.swift in Sources */,
 				92142B4C2306C2380020F7E8 /* CategoryModel.swift in Sources */,

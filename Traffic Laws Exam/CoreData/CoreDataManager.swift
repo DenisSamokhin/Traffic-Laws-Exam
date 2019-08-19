@@ -40,6 +40,8 @@ class CoreDataManager {
         }
     }
     
+    
+    
     // MARK: - CoreData Stack
     
     private lazy var managedObjectModel: NSManagedObjectModel? = {
