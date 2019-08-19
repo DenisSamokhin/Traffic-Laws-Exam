@@ -18,27 +18,33 @@ struct CategoriesViewModel {
         categoriesList = models
     }
     
-    var categoriesTitles: [String]? {
+    var categoriesTitles: [String] {
         var list = [String]()
         for model in self.categoriesList {
             list.append(model.title)
         }
+        // Add "All categories" option
+        list.append(Constants.ButtonTitles.allCategories)
         return list
     }
     
-    var categoriesImages: [String]? {
+    var categoriesImages: [String] {
         var list = [String]()
         for model in self.categoriesList {
             list.append(model.title)
         }
+        // Add image name for "All categories" option
+        list.append(Constants.ImageNames.allCategoriesImage)
         return list
     }
     
     func getID(index: Int) -> Int {
-        if index >= categoriesList.count {
-            return 0 // if category_id is 0, then show all categories
+        if index >= 0 && index < categoriesList.count {
+            let model = categoriesList[index]
+            return model.id
+        }else {
+            return 0 // id for  "All categories" option
         }
-        let model = categoriesList[index]
-        return model.id
+        
     }
 }

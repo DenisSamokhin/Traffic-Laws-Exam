@@ -31,4 +31,12 @@ struct Constants {
         static var categories = "Categories"
         static var profiles = "Profiles"
     }
+    
+    struct ButtonTitles {
+        static var allCategories = "Все категории"
+    }
+    
+    struct ImageNames {
+        static var allCategoriesImage = ""
+    }
 }

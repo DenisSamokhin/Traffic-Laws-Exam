@@ -51,7 +51,9 @@ class WelcomeViewController: UIViewController {
     // MARK: - Navigation
     
     @objc func goToCategoryVC() {
-        self.navigationController?.pushViewController(CategoryViewController(), animated: true)
+        let categoryViewModel = CategoriesViewModel(models: DataManager.shared.getCategoriesList())
+        let categoryVC = CategoryViewController(viewModel: categoryViewModel)
+        self.navigationController?.pushViewController(categoryVC, animated: true)
     }
     
 }
