@@ -11,14 +11,14 @@ import UIKit
 class CategoryViewController: UIViewController {
     
     let cellId = "CategoryCellIdentifier"
-    var categoryVM: CategoriesViewModel
+    var viewModel: CategoriesViewModel
     
     private var collectionView: UICollectionView?
     
     // MARK: - Initialiation
     
     init(viewModel: CategoriesViewModel) {
-        self.categoryVM = viewModel
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -77,12 +77,12 @@ class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (section == 0) ? self.categoryVM.categoriesTitles.count - 1 : 1
+        return (section == 0) ? self.viewModel.categoriesTitles.count - 1 : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
-        cell.titleLabel.text = (indexPath.section == 1) ? categoryVM.categoriesTitles.last : categoryVM.categoriesTitles[indexPath.row]
+        cell.titleLabel.text = (indexPath.section == 1) ? viewModel.categoriesTitles.last : viewModel.categoriesTitles[indexPath.row]
         cell.imageView.image = UIImage(named: "test-sign-image")
         return cell
     }
@@ -95,7 +95,7 @@ extension CategoryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
-        let categoryId = (indexPath.section == 0) ? categoryVM.getID(index: indexPath.row) : 0
+        let categoryId = (indexPath.section == 0) ? viewModel.getID(index: indexPath.row) : 0
         let exam = ExamManager.shared.createExam(categoryId: categoryId)
         let examVM = ExamViewModel(exam: exam)
         let examVC = ExamViewController(viewModel: examVM)
