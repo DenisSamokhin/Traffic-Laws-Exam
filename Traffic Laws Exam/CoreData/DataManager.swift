@@ -30,16 +30,16 @@ class DataManager {
                 guard let obj = object as? [String : AnyObject],
                     let idNum = obj[Constants.JSONKeys.id] as? NSNumber,
                     let code = obj[Constants.JSONKeys.code] as? String,
-                    let image = obj[Constants.JSONKeys.image] as? String,
                     let title = obj[Constants.JSONKeys.title] as? String,
                     let categoryId = obj[Constants.JSONKeys.categoryId] as? NSNumber
                     else { continue }
                 let sign = SignModel(context: cdManager.mainManagedObjectContext)
                 sign.id = idNum.intValue
                 sign.code = code
-                sign.image = image
+                sign.image = code
                 sign.title = title
                 sign.categoryId = categoryId.intValue
+                sign.similarSigns = obj[Constants.JSONKeys.similarSigns] as? [Int]
                 do {
                     try cdManager.mainManagedObjectContext.save()
                 }catch {
@@ -77,12 +77,16 @@ class DataManager {
     
     // MARK: - Getters
     
-    func getSignsList() -> [SignModel] {
-        return cdManager.getSignsList()
+    func getSignsList(categoryId: Int?) -> [SignModel] {
+        return cdManager.getSignsList(categoryId: categoryId)
     }
     
     func getCategoriesList() -> [CategoryModel] {
         return cdManager.getCategoriesList()
+    }
+    
+    func getSign(id: Int) -> SignModel? {
+        return cdManager.getSign(id: id)
     }
     
     // MARK: - Exams
@@ -90,6 +94,7 @@ class DataManager {
     func createEmptyExam() -> ExamModel {
         // Calculate id for new exam object and set it
         let exam = ExamModel(context: cdManager.mainManagedObjectContext)
+        exam.id = cdManager.newId(for: Constants.CoreDataKeys.exams)
         return exam
     }
     

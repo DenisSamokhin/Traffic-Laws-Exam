@@ -16,4 +16,18 @@ final class SignModel: NSManagedObject {
     @NSManaged var image: String
     @NSManaged var title: String
     @NSManaged var categoryId: Int
+    @NSManaged var similarSigns: [Int]?
+    
+    func answers() -> [SignModel] {
+        var tempList = [SignModel]()
+        guard let similars = self.similarSigns else {
+            return tempList
+        }
+        for i in similars {
+            if let sign = DataManager.shared.getSign(id: i) {
+                tempList.append(sign)
+            }
+        }
+        return tempList
+    }
 }

@@ -18,10 +18,18 @@ class CoreDataManager {
     
     // MARK: - Pulling
     
-    func getSignsList() -> [SignModel] {
+    func getSignsList(categoryId: Int?) -> [SignModel] {
+        var category = 0 // If category id is nil then return all categories
+        if let catId = categoryId {
+            category = catId
+        }
         let request = NSFetchRequest<SignModel>(entityName: Constants.CoreDataKeys.signs)
+        if category != 0 {
+            let predicate = NSPredicate(format: "categoryId == %d", category)
+            request.predicate = predicate
+        }
         do {
-            let result = try self.privateManagedObjectContext.fetch(request)
+            let result = try self.mainManagedObjectContext.fetch(request)
             return result
         }catch {
             print("getSignsList() FAILED")
@@ -31,8 +39,10 @@ class CoreDataManager {
     
     func getCategoriesList() -> [CategoryModel] {
         let request = NSFetchRequest<CategoryModel>(entityName: Constants.CoreDataKeys.categories)
+        let sort = NSSortDescriptor(key: #keyPath(CategoryModel.id), ascending: true)
+        request.sortDescriptors = [sort]
         do {
-            let result = try self.privateManagedObjectContext.fetch(request)
+            let result = try self.mainManagedObjectContext.fetch(request)
             return result
         }catch {
             print("getCategoriesList() FAILED")
@@ -40,7 +50,37 @@ class CoreDataManager {
         }
     }
     
+    func getSign(id: Int) -> SignModel? {
+        let request = NSFetchRequest<SignModel>(entityName: Constants.CoreDataKeys.signs)
+        let predicate = NSPredicate(format: "id == %d", id)
+        request.predicate = predicate
+        do {
+            let result = try self.mainManagedObjectContext.fetch(request)
+            return result.first
+        }catch {
+            print("getSignsList() FAILED")
+            return nil
+        }
+    }
     
+    // MARK: - Generate id
+    
+    func newId(for entity: String) -> Int {
+        let request = NSFetchRequest<ExamModel>(entityName: Constants.CoreDataKeys.exams)
+        let sort = NSSortDescriptor(key: #keyPath(ExamModel.id), ascending: true)
+        request.sortDescriptors = [sort]
+        var index = 0
+        do {
+            let result = try self.mainManagedObjectContext.fetch(request)
+            if let lastExam = result.last {
+                index = lastExam.id + 1
+            }
+            return index
+        }catch {
+            print("getSignsList() FAILED")
+            return index
+        }
+    }
     
     // MARK: - CoreData Stack
     

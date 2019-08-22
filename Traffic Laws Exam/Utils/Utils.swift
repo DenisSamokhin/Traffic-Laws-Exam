@@ -23,6 +23,7 @@ struct Constants {
         static var image = "image"
         static var title = "title"
         static var categoryId = "categoryId"
+        static var similarSigns = "similarSigns"
     }
     
     struct CoreDataKeys {
@@ -38,5 +39,10 @@ struct Constants {
     
     struct ImageNames {
         static var allCategoriesImage = ""
+    }
+    
+    struct Settings {
+        static var maxTestsCountInExam = 15
+        static var maxAnswersCountInTest = 3
     }
 }

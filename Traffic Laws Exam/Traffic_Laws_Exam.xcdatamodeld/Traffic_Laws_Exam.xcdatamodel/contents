@@ -22,12 +22,13 @@
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="similarSigns" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Categories" positionX="-407.1484375" positionY="-61.8046875" width="128" height="75"/>
         <element name="Exams" positionX="-24.65625" positionY="-60.11328125" width="128.46484375" height="120"/>
         <element name="Profiles" positionX="-189.390625" positionY="110.90625" width="128" height="105"/>
-        <element name="SignModel" positionX="-216" positionY="54" width="128" height="120"/>
+        <element name="SignModel" positionX="-216" positionY="54" width="128" height="135"/>
     </elements>
 </model>

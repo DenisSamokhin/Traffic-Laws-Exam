@@ -30,6 +30,7 @@ class ExamViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Exam"
         self.view.backgroundColor = UIColor.white
+        let img = ImageManager.shared.load(image: "7.21.1")
     }
     
 
