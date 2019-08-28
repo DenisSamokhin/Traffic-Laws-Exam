@@ -12,7 +12,7 @@ extension Array {
     
     func subListWithRandomElements(maxLimit: Int) -> Array {
         var tempList = self
-        while tempList.count > maxLimit - 1 { // MaxLimit - 1 because we need to reserve 1 slot for the correct answer
+        while tempList.count > maxLimit { 
             let randomIndex = Int(arc4random_uniform(UInt32(tempList.count)))
             tempList.remove(at: randomIndex)
         }

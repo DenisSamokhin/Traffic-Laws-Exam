@@ -15,7 +15,7 @@ class TestModel: NSObject {
     
     init(sign: SignModel) {
         self.sign = sign
-        var otherAnswers = self.sign.answers().subListWithRandomElements(maxLimit: Constants.Settings.maxAnswersCountInTest)
+        var otherAnswers = self.sign.answers().subListWithRandomElements(maxLimit: Constants.Settings.maxAnswersCountInTest - 1) // MaxLimit - 1 because we need to reserve 1 slot for the correct answer
         otherAnswers.append(sign)
         self.answers = otherAnswers.shuffled()
     } 
