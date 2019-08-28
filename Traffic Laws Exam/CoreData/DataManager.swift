@@ -40,6 +40,9 @@ class DataManager {
                 sign.title = title
                 sign.categoryId = categoryId.intValue
                 sign.similarSigns = obj[Constants.JSONKeys.similarSigns] as? [Int]
+                if sign.similarSigns == nil {
+                    print("-\n----- DATA SAMPLE ERROR: Similar Signs are missing for sign with ID: \(sign.id) and Title: \(sign.title)")
+                }
                 do {
                     try cdManager.mainManagedObjectContext.save()
                 }catch {
