@@ -15,7 +15,12 @@ class TestModel: NSObject {
     
     init(sign: SignModel) {
         self.sign = sign
-        self.answers = self.sign.answers().subListWithRandomElements(maxLimit: Constants.Settings.maxAnswersCountInTest)
+        var otherAnswers = self.sign.answers().subListWithRandomElements(maxLimit: Constants.Settings.maxAnswersCountInTest)
+        otherAnswers.append(sign)
+        self.answers = otherAnswers.shuffled()
     } 
     
+    func correctAnswer() -> String {
+        return sign.title
+    }
 }
