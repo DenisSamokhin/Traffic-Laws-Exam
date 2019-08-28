@@ -18,6 +18,8 @@ class ExamViewController: UIViewController {
     var button2: AnswerButton?
     var button3: AnswerButton?
     var buttonsContainer: UIView?
+    var scoreLabel: UILabel?
+    var testNumberLabel: UILabel?
     
     
     // MARK: - Initialiation
@@ -46,6 +48,8 @@ class ExamViewController: UIViewController {
         setTestContainerView()
         setButtons()
         setSignImageView()
+        setScoreLabel()
+        setTestNumberLabel()
     }
     
     func setTestContainerView() {
@@ -141,6 +145,30 @@ class ExamViewController: UIViewController {
         iv.widthAnchor.constraint(equalTo: imageContainer.heightAnchor).isActive = true
     }
     
+    func setScoreLabel() {
+        scoreLabel = UILabel()
+        guard let label = scoreLabel else { return }
+        label.textAlignment = .center
+        label.text = "0"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        
+        label.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15).isActive = true
+        label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+    }
+    
+    func setTestNumberLabel() {
+        testNumberLabel = UILabel()
+        guard let label = testNumberLabel else { return }
+        label.textAlignment = .center
+        label.text = viewModel.testNumberString()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        
+        label.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15).isActive = true
+        label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+    }
+    
     func changeButtons(enabled: Bool) {
         guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
         btn1.isUserInteractionEnabled = enabled
@@ -149,11 +177,17 @@ class ExamViewController: UIViewController {
     }
     
     func reloadUI(forTest test: TestModel) {
-        guard let btn1 = button1, let btn2 = button2, let btn3 = button3, let iv = signImageView else { return }
+        guard let btn1 = button1, let btn2 = button2, let btn3 = button3, let iv = signImageView, let testNumLabel = testNumberLabel else { return }
         btn1.updateAnswer(answer: test.answers[0])
         btn2.updateAnswer(answer: test.answers[1])
         btn3.updateAnswer(answer: test.answers[2])
         iv.image = ImageManager.shared.load(image: test.sign.image)
+        testNumLabel.text = viewModel.testNumberString()
+    }
+    
+    func updateScoreLabel() {
+        guard let label = scoreLabel else { return }
+        label.text = viewModel.currentScore()
     }
     
     func goNext() {
@@ -174,6 +208,8 @@ class ExamViewController: UIViewController {
         changeButtons(enabled: false)
         if button.answer.title == viewModel.currentTest().correctAnswer() {
             button.change(answerType: .correct)
+            viewModel.increaseScore()
+            updateScoreLabel()
             DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.correctAnswerHighlightDuration, execute: {
                 self.goNext()
             })
