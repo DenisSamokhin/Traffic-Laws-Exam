@@ -24,6 +24,7 @@
 		923EB17E230325B8003B90D7 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17D230325B8003B90D7 /* categories.json */; };
 		923EB1802303436C003B90D7 /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17F2303436C003B90D7 /* SignModel.swift */; };
 		923EB182230344C5003B90D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB181230344C5003B90D7 /* DataManager.swift */; };
+		926AF3C623168C38008A9A33 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926AF3C523168C38008A9A33 /* AnswerButton.swift */; };
 		927BE088230E7E07001BDC45 /* signs-ua.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927BE087230E7E07001BDC45 /* signs-ua.xcassets */; };
 		927BE08A230E822B001BDC45 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BE089230E822B001BDC45 /* ImageManager.swift */; };
 		927BE08C230E88C0001BDC45 /* signs-ru.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927BE08B230E88C0001BDC45 /* signs-ru.xcassets */; };
@@ -68,6 +69,7 @@
 		923EB17D230325B8003B90D7 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		923EB17F2303436C003B90D7 /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
 		923EB181230344C5003B90D7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		926AF3C523168C38008A9A33 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		927BE087230E7E07001BDC45 /* signs-ua.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "signs-ua.xcassets"; sourceTree = "<group>"; };
 		927BE089230E822B001BDC45 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		927BE08B230E88C0001BDC45 /* signs-ru.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "signs-ru.xcassets"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				92B11912230AA12800CA6415 /* Cells */,
 				923EB16E2301CFDA003B90D7 /* DefaultButton.swift */,
+				926AF3C523168C38008A9A33 /* AnswerButton.swift */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				92B11914230AD9DB00CA6415 /* ExamViewModel.swift in Sources */,
 				927BE08A230E822B001BDC45 /* ImageManager.swift in Sources */,
 				92B1191E230AE14700CA6415 /* ExamViewController.swift in Sources */,
+				926AF3C623168C38008A9A33 /* AnswerButton.swift in Sources */,
 				92B1191A230ADB1500CA6415 /* ExamManager.swift in Sources */,
 				92B11917230ADA3A00CA6415 /* TestModel.swift in Sources */,
 				927BE08E230EB171001BDC45 /* Extensions.swift in Sources */,

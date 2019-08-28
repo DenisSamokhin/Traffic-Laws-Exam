@@ -12,6 +12,13 @@ class ExamViewController: UIViewController {
     
     var viewModel: ExamViewModel
     
+    var testContainerView: UIView?
+    var signImageView: UIImageView?
+    var button1: UIButton?
+    var button2: UIButton?
+    var button3: UIButton?
+    var buttonsContainer: UIView?
+    
     
     // MARK: - Initialiation
     
@@ -31,7 +38,120 @@ class ExamViewController: UIViewController {
         self.title = "Exam"
         self.view.backgroundColor = UIColor.white
         let img = ImageManager.shared.load(image: "7.21.1")
+        let tests = viewModel.currentExam.tests
+        print(tests)
+        setUI()
     }
     
+    // MARK: - UI
+    
+    func setUI() {
+        setTestContainerView()
+        setButtons()
+        setSignImageView()
+    }
+    
+    func setTestContainerView() {
+        
+        if testContainerView != nil { return }
+        
+        testContainerView = UIView()
+        guard let container = testContainerView else { return }
+        container.backgroundColor = UIColor.clear
+        container.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(container)
+        
+        container.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        container.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        container.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+    }
+    
+    func setButtons() {
+        
+        buttonsContainer = UIView()
+        guard let container = testContainerView, let buttonsContainer = buttonsContainer else { return }
+        buttonsContainer.backgroundColor = UIColor.clear
+        buttonsContainer.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(buttonsContainer)
+        
+        buttonsContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        buttonsContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        buttonsContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
+        buttonsContainer.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.6).isActive = true
+        
+        button1 = AnswerButton(title: viewModel.currentExam.tests[0].answers[0].title)
+        guard let btn1 = button1 else { return }
+        btn1.translatesAutoresizingMaskIntoConstraints = false
+        btn1.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
+        buttonsContainer.addSubview(btn1)
+        
+        button2 = AnswerButton(title: viewModel.currentExam.tests[0].answers[1].title)
+        guard let btn2 = button2 else { return }
+        btn2.translatesAutoresizingMaskIntoConstraints = false
+        btn2.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
+        buttonsContainer.addSubview(btn2)
+        
+        button3 = AnswerButton(title: viewModel.currentExam.tests[0].answers[2].title)
+        guard let btn3 = button3 else { return }
+        btn3.translatesAutoresizingMaskIntoConstraints = false
+        btn3.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
+        buttonsContainer.addSubview(btn3)
+        
+        self.view.layoutIfNeeded()
+        let padding = buttonsContainer.frame.size.height * 0.1
+        
+        btn2.centerXAnchor.constraint(equalTo: buttonsContainer.centerXAnchor).isActive = true
+        btn2.centerYAnchor.constraint(equalTo: buttonsContainer.centerYAnchor).isActive = true
+        btn2.widthAnchor.constraint(equalTo: buttonsContainer.widthAnchor, multiplier: 0.7).isActive = true
+        btn2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        btn1.centerXAnchor.constraint(equalTo: btn2.centerXAnchor).isActive = true
+        btn1.widthAnchor.constraint(equalTo: btn2.widthAnchor).isActive = true
+        btn1.heightAnchor.constraint(equalTo: btn2.heightAnchor).isActive = true
+        btn1.bottomAnchor.constraint(equalTo: btn2.topAnchor, constant: -padding).isActive = true
+        
+        btn3.centerXAnchor.constraint(equalTo: btn2.centerXAnchor).isActive = true
+        btn3.widthAnchor.constraint(equalTo: btn2.widthAnchor).isActive = true
+        btn3.heightAnchor.constraint(equalTo: btn2.heightAnchor).isActive = true
+        btn3.topAnchor.constraint(equalTo: btn2.bottomAnchor, constant: padding).isActive = true
+    }
+    
+    func setSignImageView() {
+        if signImageView != nil { return }
+        
+        signImageView = UIImageView(image: ImageManager.shared.load(image: viewModel.currentExam.tests[0].sign.image))
+        guard let iv = signImageView, let container = testContainerView, let buttonsContainer = buttonsContainer else { return }
+        
+        let imageContainer = UIView()
+        imageContainer.backgroundColor = UIColor.clear
+        imageContainer.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(imageContainer)
+        
+        imageContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        imageContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        imageContainer.bottomAnchor.constraint(equalTo: buttonsContainer.topAnchor).isActive = true
+        imageContainer.topAnchor.constraint(equalTo: container.topAnchor).isActive = true
+        
+        iv.backgroundColor = UIColor.clear
+        iv.contentMode = .scaleAspectFit
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        imageContainer.addSubview(iv)
+        
+        iv.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor).isActive = true
+        iv.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor).isActive = true
+        iv.heightAnchor.constraint(equalTo: imageContainer.heightAnchor, multiplier: 0.5).isActive = true
+        iv.widthAnchor.constraint(equalTo: imageContainer.heightAnchor).isActive = true
+    }
 
+    
+    // MARK: - Actions
+    
+    @objc func answerButtonClicked(button: AnswerButton) {
+        if button == button1 {
+            
+        }
+    }
+    
+    
 }
