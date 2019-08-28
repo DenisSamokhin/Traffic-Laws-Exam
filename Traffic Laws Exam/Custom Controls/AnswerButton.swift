@@ -23,7 +23,6 @@ class AnswerButton: UIButton {
         self.cornerRadius = cornerRadius
         self.answer = answer
         super.init(frame: .zero)
-        self.setTitle(answer.title, for: .normal)
         setupDefaultUI()
     }
     
@@ -32,10 +31,12 @@ class AnswerButton: UIButton {
     }
     
     func setupDefaultUI() {
+        self.setTitle(answer.title, for: .normal)
         self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
         self.setTitleColor(ButtonSettings.Colors.AnswerButton.NeutralType.textColor, for: .normal)
         self.layer.cornerRadius = cornerRadius
         self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        self.titleLabel?.numberOfLines = 0
     }
     
     func change(answerType type: AnswerType) {
@@ -56,12 +57,17 @@ class AnswerButton: UIButton {
     }
     
     func highlightCorrectAnswer() {
-        UIView.animate(withDuration: 0.5, delay: 0, options:[UIView.AnimationOptions.repeat], animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options:[UIView.AnimationOptions.repeat], animations: {
             self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
             self.backgroundColor = ButtonSettings.Colors.AnswerButton.CorrectType.bgColor
         }, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests - 2, execute: {
             self.layer.removeAllAnimations()
         })
+    }
+    
+    func updateAnswer(answer: SignModel) {
+        self.answer = answer
+        setupDefaultUI()
     }
 }

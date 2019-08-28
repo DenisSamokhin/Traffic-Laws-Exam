@@ -12,13 +12,22 @@ import UIKit
 struct ExamViewModel {
     
     var currentExam: ExamModel
+    private var currentTestIndex = 0
     
     init(exam: ExamModel) {
         self.currentExam = exam
     }
     
-    func title(forAnswerIndex answerIndex: Int, testIndex: Int) -> String {
-        return self.currentExam.tests[testIndex].answers[answerIndex].title
+    func currentTest() -> TestModel {
+        return self.currentExam.tests[currentTestIndex]
+    }
+    
+    mutating func goToNextTest() {
+        currentTestIndex += 1
+    }
+    
+    func isLastTest() -> Bool {
+        return currentTestIndex == currentExam.tests.count - 1
     }
     
 }

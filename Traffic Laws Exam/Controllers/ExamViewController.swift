@@ -37,9 +37,6 @@ class ExamViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Exam"
         self.view.backgroundColor = UIColor.white
-        let img = ImageManager.shared.load(image: "7.21.1")
-        let tests = viewModel.currentExam.tests
-        print(tests)
         setUI()
     }
     
@@ -80,19 +77,19 @@ class ExamViewController: UIViewController {
         buttonsContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
         buttonsContainer.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.6).isActive = true
         
-        button1 = AnswerButton(answer: viewModel.currentExam.tests[0].answers[0])
+        button1 = AnswerButton(answer: viewModel.currentTest().answers[0])
         guard let btn1 = button1 else { return }
         btn1.translatesAutoresizingMaskIntoConstraints = false
         btn1.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
         buttonsContainer.addSubview(btn1)
         
-        button2 = AnswerButton(answer: viewModel.currentExam.tests[0].answers[1])
+        button2 = AnswerButton(answer: viewModel.currentTest().answers[1])
         guard let btn2 = button2 else { return }
         btn2.translatesAutoresizingMaskIntoConstraints = false
         btn2.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
         buttonsContainer.addSubview(btn2)
         
-        button3 = AnswerButton(answer: viewModel.currentExam.tests[0].answers[2])
+        button3 = AnswerButton(answer: viewModel.currentTest().answers[2])
         guard let btn3 = button3 else { return }
         btn3.translatesAutoresizingMaskIntoConstraints = false
         btn3.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
@@ -120,7 +117,7 @@ class ExamViewController: UIViewController {
     func setSignImageView() {
         if signImageView != nil { return }
         
-        signImageView = UIImageView(image: ImageManager.shared.load(image: viewModel.currentExam.tests[0].sign.image))
+        signImageView = UIImageView(image: ImageManager.shared.load(image: viewModel.currentTest().sign.image))
         guard let iv = signImageView, let container = testContainerView, let buttonsContainer = buttonsContainer else { return }
         
         let imageContainer = UIView()
@@ -143,25 +140,49 @@ class ExamViewController: UIViewController {
         iv.heightAnchor.constraint(equalTo: imageContainer.heightAnchor, multiplier: 0.5).isActive = true
         iv.widthAnchor.constraint(equalTo: imageContainer.heightAnchor).isActive = true
     }
-
+    
+    func changeButtons(enabled: Bool) {
+        guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
+        btn1.isUserInteractionEnabled = enabled
+        btn2.isUserInteractionEnabled = enabled
+        btn3.isUserInteractionEnabled = enabled
+    }
+    
+    func reloadUI(forTest test: TestModel) {
+        guard let btn1 = button1, let btn2 = button2, let btn3 = button3, let iv = signImageView else { return }
+        btn1.updateAnswer(answer: test.answers[0])
+        btn2.updateAnswer(answer: test.answers[1])
+        btn3.updateAnswer(answer: test.answers[2])
+        iv.image = ImageManager.shared.load(image: test.sign.image)
+    }
+    
     
     // MARK: - Actions
     
     @objc func answerButtonClicked(button: AnswerButton) {
         guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
         let buttons = [btn1, btn2, btn3]
-        
-        if button.answer.title == viewModel.currentExam.tests[0].correctAnswer() {
+        changeButtons(enabled: false)
+        if button.answer.title == viewModel.currentTest().correctAnswer() {
             button.change(answerType: .correct)
         }else {
             button.change(answerType: .wrong)
             for btn in buttons {
-                if btn.answer.title == viewModel.currentExam.tests[0].correctAnswer() {
+                if btn.answer.title == viewModel.currentTest().correctAnswer() {
                     btn.highlightCorrectAnswer()
                     break
                 }
             }
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests, execute: {
+            if self.viewModel.isLastTest() {
+                // Go to results screen
+            }else {
+                self.changeButtons(enabled: true)
+                self.viewModel.goToNextTest()
+                self.reloadUI(forTest: self.viewModel.currentTest())
+            }
+        })
     }
     
     
