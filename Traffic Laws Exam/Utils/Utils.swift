@@ -64,5 +64,6 @@ struct Constants {
         static var maxTestsCountInExam = 15
         static var maxAnswersCountInTest = 3
         static var delayBetweenTests = 3.0 // Minimum value - 3.0 sec
+        static var correctAnswerHighlightDuration = 2.0
     }
 }

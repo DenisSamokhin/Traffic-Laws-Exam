@@ -96,12 +96,12 @@ class ExamViewController: UIViewController {
         buttonsContainer.addSubview(btn3)
         
         self.view.layoutIfNeeded()
-        let padding = buttonsContainer.frame.size.height * 0.1
+        let padding = buttonsContainer.frame.size.height * 0.05
         
         btn2.centerXAnchor.constraint(equalTo: buttonsContainer.centerXAnchor).isActive = true
         btn2.centerYAnchor.constraint(equalTo: buttonsContainer.centerYAnchor).isActive = true
-        btn2.widthAnchor.constraint(equalTo: buttonsContainer.widthAnchor, multiplier: 0.7).isActive = true
-        btn2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        btn2.widthAnchor.constraint(equalTo: buttonsContainer.widthAnchor, multiplier: 0.8).isActive = true
+        btn2.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         btn1.centerXAnchor.constraint(equalTo: btn2.centerXAnchor).isActive = true
         btn1.widthAnchor.constraint(equalTo: btn2.widthAnchor).isActive = true
@@ -156,6 +156,15 @@ class ExamViewController: UIViewController {
         iv.image = ImageManager.shared.load(image: test.sign.image)
     }
     
+    func goNext() {
+        if self.viewModel.isLastTest() {
+            // Go to results screen
+        }else {
+            self.changeButtons(enabled: true)
+            self.viewModel.goToNextTest()
+            self.reloadUI(forTest: self.viewModel.currentTest())
+        }
+    }
     
     // MARK: - Actions
     
@@ -165,6 +174,9 @@ class ExamViewController: UIViewController {
         changeButtons(enabled: false)
         if button.answer.title == viewModel.currentTest().correctAnswer() {
             button.change(answerType: .correct)
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.correctAnswerHighlightDuration, execute: {
+                self.goNext()
+            })
         }else {
             button.change(answerType: .wrong)
             for btn in buttons {
@@ -173,16 +185,11 @@ class ExamViewController: UIViewController {
                     break
                 }
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests, execute: {
+                self.goNext()
+            })
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests, execute: {
-            if self.viewModel.isLastTest() {
-                // Go to results screen
-            }else {
-                self.changeButtons(enabled: true)
-                self.viewModel.goToNextTest()
-                self.reloadUI(forTest: self.viewModel.currentTest())
-            }
-        })
+        
     }
     
     

@@ -35,8 +35,9 @@ class AnswerButton: UIButton {
         self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
         self.setTitleColor(ButtonSettings.Colors.AnswerButton.NeutralType.textColor, for: .normal)
         self.layer.cornerRadius = cornerRadius
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         self.titleLabel?.numberOfLines = 0
+        self.titleLabel?.textAlignment = .center
     }
     
     func change(answerType type: AnswerType) {
@@ -61,7 +62,7 @@ class AnswerButton: UIButton {
             self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
             self.backgroundColor = ButtonSettings.Colors.AnswerButton.CorrectType.bgColor
         }, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests - 2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests - Constants.Settings.correctAnswerHighlightDuration, execute: {
             self.layer.removeAllAnimations()
         })
     }
