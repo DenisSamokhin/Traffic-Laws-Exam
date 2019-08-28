@@ -11,8 +11,27 @@ import UIKit
 
 struct ButtonSettings {
     struct Colors {
-        static var DefaultBgColor = UIColor.white
-        static var DefaultTextColor = UIColor.black
+        struct DefaultButton {
+            static var bgColor = UIColor.white
+            static var textColor = UIColor.black
+        }
+        
+        struct AnswerButton {
+            struct NeutralType {
+                static var bgColor = UIColor.orange
+                static var textColor = UIColor.white
+            }
+            
+            struct WrongType {
+                static var bgColor = UIColor.red
+                static var textColor = UIColor.white
+            }
+            
+            struct CorrectType {
+                static var bgColor = UIColor.green
+                static var textColor = UIColor.white
+            }
+        }
     }
 }
 

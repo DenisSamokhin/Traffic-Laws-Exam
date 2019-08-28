@@ -24,8 +24,8 @@ class DefaultButton: UIButton {
     }
     
     func setupDefaultUI() {
-        self.backgroundColor = ButtonSettings.Colors.DefaultBgColor
-        self.setTitleColor(ButtonSettings.Colors.DefaultTextColor, for: .normal)
+        self.backgroundColor = ButtonSettings.Colors.DefaultButton.bgColor
+        self.setTitleColor(ButtonSettings.Colors.DefaultButton.textColor, for: .normal)
         self.layer.cornerRadius = cornerRadius
     }
 }
