@@ -16,12 +16,14 @@ class AnswerButton: UIButton {
         case correct
     }
     
+    var answer: SignModel
     var cornerRadius: CGFloat
     
-    init(_ cornerRadius: CGFloat = 5.0, title: String) {
+    init(_ cornerRadius: CGFloat = 5.0, answer: SignModel) {
         self.cornerRadius = cornerRadius
+        self.answer = answer
         super.init(frame: .zero)
-        self.setTitle(title, for: .normal)
+        self.setTitle(answer.title, for: .normal)
         setupDefaultUI()
     }
     
@@ -51,5 +53,15 @@ class AnswerButton: UIButton {
             self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
             self.setTitleColor(ButtonSettings.Colors.AnswerButton.NeutralType.textColor, for: .normal)
         }
+    }
+    
+    func highlightCorrectAnswer() {
+        UIView.animate(withDuration: 0.5, delay: 0, options:[UIView.AnimationOptions.repeat], animations: {
+            self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
+            self.backgroundColor = ButtonSettings.Colors.AnswerButton.CorrectType.bgColor
+        }, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            self.layer.removeAllAnimations()
+        })
     }
 }

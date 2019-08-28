@@ -17,6 +17,8 @@ struct ExamViewModel {
         self.currentExam = exam
     }
     
-    
+    func title(forAnswerIndex answerIndex: Int, testIndex: Int) -> String {
+        return self.currentExam.tests[testIndex].answers[answerIndex].title
+    }
     
 }

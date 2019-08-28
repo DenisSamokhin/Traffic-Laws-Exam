@@ -14,9 +14,9 @@ class ExamViewController: UIViewController {
     
     var testContainerView: UIView?
     var signImageView: UIImageView?
-    var button1: UIButton?
-    var button2: UIButton?
-    var button3: UIButton?
+    var button1: AnswerButton?
+    var button2: AnswerButton?
+    var button3: AnswerButton?
     var buttonsContainer: UIView?
     
     
@@ -80,19 +80,19 @@ class ExamViewController: UIViewController {
         buttonsContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
         buttonsContainer.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.6).isActive = true
         
-        button1 = AnswerButton(title: viewModel.currentExam.tests[0].answers[0].title)
+        button1 = AnswerButton(answer: viewModel.currentExam.tests[0].answers[0])
         guard let btn1 = button1 else { return }
         btn1.translatesAutoresizingMaskIntoConstraints = false
         btn1.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
         buttonsContainer.addSubview(btn1)
         
-        button2 = AnswerButton(title: viewModel.currentExam.tests[0].answers[1].title)
+        button2 = AnswerButton(answer: viewModel.currentExam.tests[0].answers[1])
         guard let btn2 = button2 else { return }
         btn2.translatesAutoresizingMaskIntoConstraints = false
         btn2.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
         buttonsContainer.addSubview(btn2)
         
-        button3 = AnswerButton(title: viewModel.currentExam.tests[0].answers[2].title)
+        button3 = AnswerButton(answer: viewModel.currentExam.tests[0].answers[2])
         guard let btn3 = button3 else { return }
         btn3.translatesAutoresizingMaskIntoConstraints = false
         btn3.addTarget(self, action: #selector(answerButtonClicked(button:)), for: .touchUpInside)
@@ -148,8 +148,19 @@ class ExamViewController: UIViewController {
     // MARK: - Actions
     
     @objc func answerButtonClicked(button: AnswerButton) {
-        if button == button1 {
-            
+        guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
+        let buttons = [btn1, btn2, btn3]
+        
+        if button.answer.title == viewModel.currentExam.tests[0].correctAnswer() {
+            button.change(answerType: .correct)
+        }else {
+            button.change(answerType: .wrong)
+            for btn in buttons {
+                if btn.answer.title == viewModel.currentExam.tests[0].correctAnswer() {
+                    btn.highlightCorrectAnswer()
+                    break
+                }
+            }
         }
     }
     
