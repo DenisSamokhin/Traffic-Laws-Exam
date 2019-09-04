@@ -39,8 +39,12 @@ struct ExamViewModel {
         self.score += Constants.Settings.correctAnswerPoints
     }
     
-    func currentScore() -> String {
+    func currentScoreString() -> String {
         return "\(score)"
+    }
+    
+    func currentScore() -> Int {
+        return score
     }
     
 }

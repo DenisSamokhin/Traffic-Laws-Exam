@@ -187,12 +187,15 @@ class ExamViewController: UIViewController {
     
     func updateScoreLabel() {
         guard let label = scoreLabel else { return }
-        label.text = viewModel.currentScore()
+        label.text = viewModel.currentScoreString()
     }
     
     func goNext() {
         if self.viewModel.isLastTest() {
             // Go to results screen
+            let resultViewModel = ResultViewModel(exam: viewModel.currentExam, score: viewModel.currentScore())
+            let resultVC = ResultViewController(viewModel: resultViewModel)
+            self.navigationController?.pushViewController(resultVC, animated: true)
         }else {
             self.changeButtons(enabled: true)
             self.viewModel.goToNextTest()
