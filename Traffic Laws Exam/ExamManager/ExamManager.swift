@@ -19,10 +19,8 @@ class ExamManager {
         exam.categoryId = categoryId
         let signsList = DataManager.shared.getSignsList(categoryId: categoryId)
         let filteredList = generateExamSignsList(from: signsList)
-        var testsList = [TestModel]()
-        filteredList.map({
-            let test = TestModel(sign: $0)
-            testsList.append(test)
+        let testsList = filteredList.map({
+            return TestModel(sign: $0)
         })
         exam.tests = testsList
         return exam

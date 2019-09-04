@@ -51,9 +51,6 @@ class AnswerButton: UIButton {
         case . correct:
             self.backgroundColor = ButtonSettings.Colors.AnswerButton.CorrectType.bgColor
             self.setTitleColor(ButtonSettings.Colors.AnswerButton.CorrectType.textColor, for: .normal)
-        default:
-            self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
-            self.setTitleColor(ButtonSettings.Colors.AnswerButton.NeutralType.textColor, for: .normal)
         }
     }
     
