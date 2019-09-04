@@ -211,7 +211,7 @@ class ExamViewController: UIViewController {
         changeButtons(enabled: false)
         if button.answer.title == viewModel.currentTest().correctAnswer() {
             button.change(answerType: .correct)
-            viewModel.increaseScore()
+            viewModel.increaseScore(for: 1.0)
             updateScoreLabel()
             DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.correctAnswerHighlightDuration, execute: {
                 self.goNext()

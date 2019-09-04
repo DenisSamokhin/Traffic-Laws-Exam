@@ -35,8 +35,13 @@ struct ExamViewModel {
         return "\(currentTestIndex + 1)"
     }
     
-    mutating func increaseScore() {
-        self.score += Constants.Settings.correctAnswerPoints
+    mutating func increaseScore(for spentTime: Double) {
+        let maxPoints = Constants.Settings.correctAnswerMaxPoints
+        let minPoints = Constants.Settings.correctAnswerMinPoints
+        let duration = Constants.Settings.testDurationInSeconds
+        let pointsPerSecond = (maxPoints - minPoints) / (duration - 1)
+        let resultScore = (spentTime > 1) ? Int(round(Double(maxPoints) - (spentTime - 1) * Double(pointsPerSecond))) : 200
+        self.score += resultScore
     }
     
     func currentScoreString() -> String {
