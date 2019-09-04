@@ -16,6 +16,7 @@ class ExamManager {
     
     func createExam(categoryId: Int) -> ExamModel {
         let exam = DataManager.shared.createEmptyExam()
+        exam.categoryId = categoryId
         let signsList = DataManager.shared.getSignsList(categoryId: categoryId)
         let filteredList = generateExamSignsList(from: signsList)
         var testsList = [TestModel]()

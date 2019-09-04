@@ -17,5 +17,6 @@ class ExamModel: NSManagedObject {
     @NSManaged var score: Int
     @NSManaged var totalTime: Int
     @NSManaged var datePassed: Date
+    @NSManaged var categoryId: Int
 
 }
