@@ -96,7 +96,7 @@ class ResultViewController: UIViewController {
     }
     
     func setHomeButton() {
-        homeButton = DefaultButton(title: "Home")
+        homeButton = DefaultButton(title: "На главную")
         guard let btn1 = homeButton, let container = bottomContainerView else { return }
         btn1.translatesAutoresizingMaskIntoConstraints = false
         btn1.addTarget(self, action: #selector(homeButtonClicked), for: .touchUpInside)
@@ -109,7 +109,7 @@ class ResultViewController: UIViewController {
     }
     
     func setRepeatButton() {
-        repeatButton = DefaultButton(title: "Home")
+        repeatButton = DefaultButton(title: "Повторить тест")
         guard let btn1 = repeatButton, let btn2 = homeButton, let container = bottomContainerView else { return }
         btn1.translatesAutoresizingMaskIntoConstraints = false
         btn1.addTarget(self, action: #selector(repeatButtonClicked), for: .touchUpInside)
