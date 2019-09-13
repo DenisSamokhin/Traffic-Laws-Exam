@@ -16,6 +16,18 @@ class DataManager {
     
     private init(){}
     
+    func saveData() {
+        guard let context = cdManager.mainManagedObjectContext.parent else { return }
+        if context.hasChanges {
+            do {
+                try context.save()
+            }catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
     func parseSampleData() {
         parseSignsData()
         parseCategoriesData()
