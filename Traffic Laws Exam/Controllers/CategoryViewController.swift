@@ -99,7 +99,7 @@ extension CategoryViewController: UICollectionViewDelegate {
         let exam = ExamManager.shared.createExam(categoryId: categoryId)
         let examVM = ExamViewModel(exam: exam)
         let examVC = ExamViewController(viewModel: examVM)
-        self.navigationController?.pushViewController(examVC, animated: true)
+        self.present(examVC, animated: true, completion: nil)
     }
     
 }

@@ -45,11 +45,30 @@ class ExamViewController: UIViewController {
     // MARK: - UI
     
     func setUI() {
+        setCloseButton()
         setTestContainerView()
         setButtons()
         setSignImageView()
         setScoreLabel()
         setTestNumberLabel()
+    }
+    
+    func setCloseButton() {
+        
+        guard let img = UIImage(named: "close-icon") else { return }
+        
+        let closeBtn = UIButton(type: .custom)
+        closeBtn.setImage(img, for: .normal)
+        closeBtn.addTarget(self, action: #selector(closeButtonClicked), for: .touchUpInside)
+        let inset: CGFloat = 8.0
+        closeBtn.imageEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        closeBtn.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(closeBtn)
+        
+        closeBtn.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
+        closeBtn.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        closeBtn.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        closeBtn.heightAnchor.constraint(equalTo: closeBtn.widthAnchor).isActive = true
     }
     
     func setTestContainerView() {
@@ -65,7 +84,7 @@ class ExamViewController: UIViewController {
         container.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         container.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         container.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+        container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
     }
     
     func setButtons() {
@@ -154,19 +173,19 @@ class ExamViewController: UIViewController {
         self.view.addSubview(label)
         
         label.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15).isActive = true
-        label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 65).isActive = true
     }
     
     func setTestNumberLabel() {
         testNumberLabel = UILabel()
-        guard let label = testNumberLabel else { return }
+        guard let label = testNumberLabel, let scoreLabel = scoreLabel else { return }
         label.textAlignment = .center
         label.text = viewModel.testNumberString()
         label.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(label)
         
         label.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15).isActive = true
-        label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        label.centerYAnchor.constraint(equalTo: scoreLabel.centerYAnchor).isActive = true
     }
     
     func changeButtons(enabled: Bool) {
@@ -195,7 +214,7 @@ class ExamViewController: UIViewController {
             // Go to results screen
             let resultViewModel = ResultViewModel(exam: viewModel.currentExam, score: viewModel.currentScore())
             let resultVC = ResultViewController(viewModel: resultViewModel)
-            self.navigationController?.pushViewController(resultVC, animated: true)
+            self.present(resultVC, animated: true, completion: nil)
         }else {
             self.changeButtons(enabled: true)
             self.viewModel.goToNextTest()
@@ -229,6 +248,10 @@ class ExamViewController: UIViewController {
             })
         }
         
+    }
+    
+    @objc func closeButtonClicked() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
