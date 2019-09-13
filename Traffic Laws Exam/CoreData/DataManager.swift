@@ -33,7 +33,7 @@ class DataManager {
         parseCategoriesData()
     }
     
-    func parseSignsData() {
+    private func parseSignsData() {
         guard let signsUrl = Bundle.main.url(forResource: "signs", withExtension: "json") else { return }
         do {
             let jsonData = try Data(contentsOf: signsUrl)
@@ -66,7 +66,7 @@ class DataManager {
         }
     }
     
-    func parseCategoriesData() {
+    private func parseCategoriesData() {
         guard let categoryUrl = Bundle.main.url(forResource: "categories", withExtension: "json") else { return }
         do {
             let jsonData = try Data(contentsOf: categoryUrl)
