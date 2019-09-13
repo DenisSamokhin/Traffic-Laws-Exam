@@ -17,9 +17,15 @@ struct ResultViewModel {
     init(exam: ExamModel, score: Int) {
         self.currentExam = exam
         self.score = score
+        self.currentExam.score = self.score
+        self.currentExam.datePassed = Date()
     }
     
     func currentScoreString() -> String {
         return "\(score)"
+    }
+    
+    func saveExam() {
+        DataManager.shared.saveExam(exam: currentExam)
     }
 }

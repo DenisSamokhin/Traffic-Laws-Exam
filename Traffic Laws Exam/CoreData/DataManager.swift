@@ -114,4 +114,12 @@ class DataManager {
     }
     
     
+    func saveExam(exam: ExamModel) {
+        do {
+            try cdManager.mainManagedObjectContext.save()
+        }catch {
+            print("Core Data save error")
+        }
+    }
+    
 }
