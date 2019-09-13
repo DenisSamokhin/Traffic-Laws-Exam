@@ -11,6 +11,7 @@ import UIKit
 class ResultViewController: UIViewController {
     
     var viewModel: ResultViewModel
+    weak var coordinator: MainCoordinator?
     
     var middleContainerView: UIView?
     var bottomContainerView: UIView?
@@ -125,14 +126,13 @@ class ResultViewController: UIViewController {
     // MARK: - Actions
     
     @objc func homeButtonClicked() {
-        self.navigationController?.popToRootViewController(animated: true)
+        guard let coordinator = coordinator else { return }
+        coordinator.goToInitialScreen()
     }
     
     @objc func repeatButtonClicked() {
-        let exam = ExamManager.shared.createExam(categoryId: viewModel.currentExam.categoryId)
-        let examVM = ExamViewModel(exam: exam)
-        let examVC = ExamViewController(viewModel: examVM)
-        self.navigationController?.pushViewController(examVC, animated: true)
+        guard let coordinator = coordinator else { return }
+        coordinator.goToExamScreen(categoryId: viewModel.currentExam.categoryId)
     }
 
 }

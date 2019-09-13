@@ -12,11 +12,11 @@ class WelcomeViewController: UIViewController {
     
     let examButton = DefaultButton(title: "Начать тест")
     let profileButton = DefaultButton(title: "Мои результаты")
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orange
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         setUI()
     }
     
@@ -51,9 +51,8 @@ class WelcomeViewController: UIViewController {
     // MARK: - Navigation
     
     @objc func goToCategoryVC() {
-        let categoryViewModel = CategoriesViewModel(models: DataManager.shared.getCategoriesList())
-        let categoryVC = CategoryViewController(viewModel: categoryViewModel)
-        self.navigationController?.pushViewController(categoryVC, animated: true)
+        guard let coordinator = coordinator else { return }
+        coordinator.goToCategoriesScreen()
     }
     
 }

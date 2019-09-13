@@ -11,6 +11,7 @@ import UIKit
 class ExamViewController: UIViewController {
     
     var viewModel: ExamViewModel
+    weak var coordinator: MainCoordinator?
     
     var testContainerView: UIView?
     var signImageView: UIImageView?
@@ -212,9 +213,8 @@ class ExamViewController: UIViewController {
     func goNext() {
         if self.viewModel.isLastTest() {
             // Go to results screen
-            let resultViewModel = ResultViewModel(exam: viewModel.currentExam, score: viewModel.currentScore())
-            let resultVC = ResultViewController(viewModel: resultViewModel)
-            self.present(resultVC, animated: true, completion: nil)
+            guard let coordinator = coordinator else { return }
+            coordinator.goToResultsScreen(exam: viewModel.currentExam, score: viewModel.currentScore())
         }else {
             self.changeButtons(enabled: true)
             self.viewModel.goToNextTest()
@@ -251,7 +251,8 @@ class ExamViewController: UIViewController {
     }
     
     @objc func closeButtonClicked() {
-        self.dismiss(animated: true, completion: nil)
+        guard let coordinator = coordinator else { return }
+        coordinator.goToCategoriesScreen()
     }
     
     

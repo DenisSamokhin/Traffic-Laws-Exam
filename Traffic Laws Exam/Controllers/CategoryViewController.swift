@@ -12,6 +12,7 @@ class CategoryViewController: UIViewController {
     
     let cellId = "CategoryCellIdentifier"
     var viewModel: CategoriesViewModel
+    weak var coordinator: MainCoordinator?
     
     private var collectionView: UICollectionView?
     
@@ -31,7 +32,6 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,10 +96,8 @@ extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
         let categoryId = (indexPath.section == 0) ? viewModel.getID(index: indexPath.row) : 0
-        let exam = ExamManager.shared.createExam(categoryId: categoryId)
-        let examVM = ExamViewModel(exam: exam)
-        let examVC = ExamViewController(viewModel: examVM)
-        self.present(examVC, animated: true, completion: nil)
+        guard let coordinator = coordinator else { return }
+        coordinator.goToExamScreen(categoryId: categoryId)
     }
     
 }

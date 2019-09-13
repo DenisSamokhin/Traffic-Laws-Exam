@@ -13,15 +13,18 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var coordinator: MainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         DataManager.shared.parseSampleData()
         
-        let vc = WelcomeViewController.init()
-        let nc = UINavigationController(rootViewController: vc)
+        
+        let nc = UINavigationController()
+        nc.isNavigationBarHidden = true
+        coordinator = MainCoordinator(navigationController: nc)
+        coordinator?.start()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = nc
         self.window?.makeKeyAndVisible()

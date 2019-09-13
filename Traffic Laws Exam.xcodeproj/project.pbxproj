@@ -24,6 +24,8 @@
 		923EB17E230325B8003B90D7 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 923EB17D230325B8003B90D7 /* categories.json */; };
 		923EB1802303436C003B90D7 /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB17F2303436C003B90D7 /* SignModel.swift */; };
 		923EB182230344C5003B90D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB181230344C5003B90D7 /* DataManager.swift */; };
+		9242CE9D232B8D7000D074C5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242CE9C232B8D7000D074C5 /* Coordinator.swift */; };
+		9242CE9F232B916E00D074C5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242CE9E232B916E00D074C5 /* MainCoordinator.swift */; };
 		926AF3C623168C38008A9A33 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926AF3C523168C38008A9A33 /* AnswerButton.swift */; };
 		927BE088230E7E07001BDC45 /* signs-ua.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927BE087230E7E07001BDC45 /* signs-ua.xcassets */; };
 		927BE08A230E822B001BDC45 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BE089230E822B001BDC45 /* ImageManager.swift */; };
@@ -71,6 +73,8 @@
 		923EB17D230325B8003B90D7 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		923EB17F2303436C003B90D7 /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
 		923EB181230344C5003B90D7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		9242CE9C232B8D7000D074C5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9242CE9E232B916E00D074C5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		926AF3C523168C38008A9A33 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		927BE087230E7E07001BDC45 /* signs-ua.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "signs-ua.xcassets"; sourceTree = "<group>"; };
 		927BE089230E822B001BDC45 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				923EB1742302FCB0003B90D7 /* Content */,
 				923EB16D2301CF4C003B90D7 /* Custom Controls */,
 				923EB16C2301CE85003B90D7 /* Utils */,
+				9242CE9B232B8D5300D074C5 /* Coordinators */,
 				923EB16B2301CE7A003B90D7 /* Controllers */,
 				923EB16A2301CE6F003B90D7 /* ViewModels */,
 				923EB1692301CE62003B90D7 /* Models */,
@@ -229,6 +234,15 @@
 				923EB181230344C5003B90D7 /* DataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9242CE9B232B8D5300D074C5 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9242CE9C232B8D7000D074C5 /* Coordinator.swift */,
+				9242CE9E232B916E00D074C5 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		927BE086230E7DD3001BDC45 /* Images */ = {
@@ -362,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923EB1712301D3CE003B90D7 /* Utils.swift in Sources */,
+				9242CE9F232B916E00D074C5 /* MainCoordinator.swift in Sources */,
 				92C25B21231FC95E00DB229C /* ResultViewModel.swift in Sources */,
 				923EB1492301C9AB003B90D7 /* WelcomeViewController.swift in Sources */,
 				92B11914230AD9DB00CA6415 /* ExamViewModel.swift in Sources */,
@@ -378,6 +393,7 @@
 				92142B4C2306C2380020F7E8 /* CategoryModel.swift in Sources */,
 				923EB14F2301C9AB003B90D7 /* Traffic_Laws_Exam.xcdatamodeld in Sources */,
 				923EB1802303436C003B90D7 /* SignModel.swift in Sources */,
+				9242CE9D232B8D7000D074C5 /* Coordinator.swift in Sources */,
 				923EB1732302BE6E003B90D7 /* CategoryViewController.swift in Sources */,
 				923EB17A23031847003B90D7 /* CoreDataManager.swift in Sources */,
 				923EB182230344C5003B90D7 /* DataManager.swift in Sources */,
