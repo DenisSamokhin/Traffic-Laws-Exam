@@ -64,7 +64,7 @@ struct Constants {
     }
     
     struct Settings {
-        static var maxTestsCountInExam = 15
+        static var maxTestsCountInExam = 10
         static var maxAnswersCountInTest = 3
         static var delayBetweenTests = 3.0 // Minimum value - 3.0 sec
         static var correctAnswerHighlightDuration = 2.0
