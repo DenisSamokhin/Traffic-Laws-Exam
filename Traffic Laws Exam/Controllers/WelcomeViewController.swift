@@ -55,5 +55,16 @@ class WelcomeViewController: UIViewController {
         coordinator.goToCategoriesScreen()
     }
     
+    // MARK: -
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("Why are you shaking me?")
+            UIDevice.vibrate()
+            guard let coordinator = coordinator else { return }
+            coordinator.goToExamScreen(categoryId: 1)
+        }
+    }
+    
 }
 

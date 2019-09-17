@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import AVFoundation
+import UIKit
 
 extension Array {
     
@@ -19,4 +21,10 @@ extension Array {
         return tempList.shuffled()
     }
     
+}
+
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
 }

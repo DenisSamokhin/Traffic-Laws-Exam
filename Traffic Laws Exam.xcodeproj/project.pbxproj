@@ -26,6 +26,7 @@
 		923EB182230344C5003B90D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EB181230344C5003B90D7 /* DataManager.swift */; };
 		9242CE9D232B8D7000D074C5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242CE9C232B8D7000D074C5 /* Coordinator.swift */; };
 		9242CE9F232B916E00D074C5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242CE9E232B916E00D074C5 /* MainCoordinator.swift */; };
+		9242CEA2232BC1A300D074C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9242CEA1232BC1A300D074C5 /* AVFoundation.framework */; };
 		926AF3C623168C38008A9A33 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926AF3C523168C38008A9A33 /* AnswerButton.swift */; };
 		927BE088230E7E07001BDC45 /* signs-ua.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927BE087230E7E07001BDC45 /* signs-ua.xcassets */; };
 		927BE08A230E822B001BDC45 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BE089230E822B001BDC45 /* ImageManager.swift */; };
@@ -75,6 +76,7 @@
 		923EB181230344C5003B90D7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9242CE9C232B8D7000D074C5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9242CE9E232B916E00D074C5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9242CEA1232BC1A300D074C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		926AF3C523168C38008A9A33 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		927BE087230E7E07001BDC45 /* signs-ua.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "signs-ua.xcassets"; sourceTree = "<group>"; };
 		927BE089230E822B001BDC45 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9242CEA2232BC1A300D074C5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +117,7 @@
 				923EB1452301C9AB003B90D7 /* Traffic Laws Exam */,
 				923EB15D2301C9AD003B90D7 /* Traffic Laws ExamTests */,
 				923EB1442301C9AB003B90D7 /* Products */,
+				9242CEA0232BC1A200D074C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +247,14 @@
 				9242CE9E232B916E00D074C5 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		9242CEA0232BC1A200D074C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9242CEA1232BC1A300D074C5 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		927BE086230E7DD3001BDC45 /* Images */ = {
