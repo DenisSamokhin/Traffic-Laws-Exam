@@ -63,6 +63,19 @@ class CoreDataManager {
         }
     }
     
+    func getStoredExams() -> [ExamModel] {
+        let request = NSFetchRequest<ExamModel>(entityName: Constants.CoreDataKeys.exams)
+        let sort = NSSortDescriptor(key: #keyPath(ExamModel.datePassed), ascending: false)
+        request.sortDescriptors = [sort]
+        do {
+            let result = try self.mainManagedObjectContext.fetch(request)
+            return result
+        }catch {
+            print("getStoredExams() FAILED")
+            return [ExamModel]()
+        }
+    }
+    
     // MARK: - Generate id
     
     func newId(for entity: String) -> Int {

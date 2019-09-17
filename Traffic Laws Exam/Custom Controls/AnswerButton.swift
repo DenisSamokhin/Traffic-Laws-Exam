@@ -16,10 +16,10 @@ class AnswerButton: UIButton {
         case correct
     }
     
-    var answer: SignModel
+    var answer: String
     var cornerRadius: CGFloat
     
-    init(_ cornerRadius: CGFloat = 5.0, answer: SignModel) {
+    init(_ cornerRadius: CGFloat = 5.0, answer: String) {
         self.cornerRadius = cornerRadius
         self.answer = answer
         super.init(frame: .zero)
@@ -31,7 +31,7 @@ class AnswerButton: UIButton {
     }
     
     func setupDefaultUI() {
-        self.setTitle(answer.title, for: .normal)
+        self.setTitle(answer, for: .normal)
         self.backgroundColor = ButtonSettings.Colors.AnswerButton.NeutralType.bgColor
         self.setTitleColor(ButtonSettings.Colors.AnswerButton.NeutralType.textColor, for: .normal)
         self.layer.cornerRadius = cornerRadius
@@ -64,7 +64,7 @@ class AnswerButton: UIButton {
         })
     }
     
-    func updateAnswer(answer: SignModel) {
+    func updateAnswer(answer: String) {
         self.answer = answer
         setupDefaultUI()
     }

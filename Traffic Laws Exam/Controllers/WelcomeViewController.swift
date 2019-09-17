@@ -40,6 +40,7 @@ class WelcomeViewController: UIViewController {
     
     func setupProfileButton() {
         profileButton.translatesAutoresizingMaskIntoConstraints = false
+        profileButton.addTarget(self, action: #selector(goToProfile), for: .touchUpInside)
         self.view.addSubview(profileButton)
         
         profileButton.centerXAnchor.constraint(equalTo: examButton.centerXAnchor).isActive = true
@@ -53,6 +54,14 @@ class WelcomeViewController: UIViewController {
     @objc func goToCategoryVC() {
         guard let coordinator = coordinator else { return }
         coordinator.goToCategoriesScreen()
+    }
+    
+    @objc func goToProfile() {
+        let exams = DataManager.shared.getStoredExams()
+        exams.forEach({
+            print($0.datePassed)
+            
+        })
     }
     
     // MARK: -

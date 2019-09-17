@@ -122,4 +122,8 @@ class DataManager {
         }
     }
     
+    func getStoredExams() -> [ExamModel] {
+        return cdManager.getStoredExams()
+    }
+    
 }

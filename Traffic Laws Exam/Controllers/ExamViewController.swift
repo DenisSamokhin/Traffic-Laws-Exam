@@ -141,7 +141,7 @@ class ExamViewController: UIViewController {
     func setSignImageView() {
         if signImageView != nil { return }
         
-        signImageView = UIImageView(image: ImageManager.shared.load(image: viewModel.currentTest().sign.image))
+        signImageView = UIImageView(image: ImageManager.shared.load(image: viewModel.currentTest().image))
         guard let iv = signImageView, let container = testContainerView, let buttonsContainer = buttonsContainer else { return }
         
         let imageContainer = UIView()
@@ -201,7 +201,7 @@ class ExamViewController: UIViewController {
         btn1.updateAnswer(answer: test.answers[0])
         btn2.updateAnswer(answer: test.answers[1])
         btn3.updateAnswer(answer: test.answers[2])
-        iv.image = ImageManager.shared.load(image: test.sign.image)
+        iv.image = ImageManager.shared.load(image: test.image)
         testNumLabel.text = viewModel.testNumberString()
     }
     
@@ -228,7 +228,7 @@ class ExamViewController: UIViewController {
         guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
         let buttons = [btn1, btn2, btn3]
         changeButtons(enabled: false)
-        if button.answer.title == viewModel.currentTest().correctAnswer() {
+        if button.answer == viewModel.currentTest().correctAnswer {
             button.change(answerType: .correct)
             viewModel.increaseScore(for: 1.0)
             updateScoreLabel()
@@ -238,7 +238,7 @@ class ExamViewController: UIViewController {
         }else {
             button.change(answerType: .wrong)
             for btn in buttons {
-                if btn.answer.title == viewModel.currentTest().correctAnswer() {
+                if btn.answer == viewModel.currentTest().correctAnswer {
                     btn.highlightCorrectAnswer()
                     break
                 }
