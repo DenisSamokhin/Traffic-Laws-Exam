@@ -43,6 +43,9 @@ struct Constants {
         static var title = "title"
         static var categoryId = "categoryId"
         static var similarSigns = "similarSigns"
+        static var sign = "sign"
+        static var answers = "answers"
+        static var correctAnswer = "correctAnswer"
     }
     
     struct CoreDataKeys {
