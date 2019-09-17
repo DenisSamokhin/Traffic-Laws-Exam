@@ -45,6 +45,7 @@ class DataManager {
                     let title = obj[Constants.JSONKeys.title] as? String,
                     let categoryId = obj[Constants.JSONKeys.categoryId] as? NSNumber
                     else { continue }
+                if cdManager.checkSignForDuplicates(id: idNum) { continue }
                 let sign = SignModel(context: cdManager.mainManagedObjectContext)
                 sign.id = idNum.intValue
                 sign.code = code
@@ -72,6 +73,7 @@ class DataManager {
                     let idNum = obj[Constants.JSONKeys.id] as? NSNumber,
                     let title = obj[Constants.JSONKeys.title] as? String
                     else { continue }
+                if cdManager.checkCategoryForDuplicates(id: idNum) { continue }
                 let category = CategoryModel(context: cdManager.mainManagedObjectContext)
                 category.id = idNum.intValue
                 category.title = title

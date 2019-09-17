@@ -95,6 +95,32 @@ class CoreDataManager {
         }
     }
     
+    func checkSignForDuplicates(id: NSNumber) -> Bool {
+        let request = NSFetchRequest<SignModel>(entityName: Constants.CoreDataKeys.signs)
+        let predicate = NSPredicate(format: "id == %d", id.intValue)
+        request.predicate = predicate
+        do {
+            let result = try self.mainManagedObjectContext.fetch(request)
+            return result.count > 0
+        }catch {
+            print("getSignsList() FAILED")
+            return false
+        }
+    }
+    
+    func checkCategoryForDuplicates(id: NSNumber) -> Bool {
+        let request = NSFetchRequest<CategoryModel>(entityName: Constants.CoreDataKeys.categories)
+        let predicate = NSPredicate(format: "id == %d", id.intValue)
+        request.predicate = predicate
+        do {
+            let result = try self.mainManagedObjectContext.fetch(request)
+            return result.count > 0
+        }catch {
+            print("getSignsList() FAILED")
+            return false
+        }
+    }
+    
     // MARK: - CoreData Stack
     
     private lazy var managedObjectModel: NSManagedObjectModel? = {
