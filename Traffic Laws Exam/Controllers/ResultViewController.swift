@@ -34,7 +34,7 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .orange
         self.viewModel.saveExam()
         setUI()
     }
@@ -55,7 +55,7 @@ class ResultViewController: UIViewController {
         
         middleContainerView = UIView()
         guard let container = middleContainerView else { return }
-        container.backgroundColor = UIColor.yellow
+        container.backgroundColor = UIColor.orange
         container.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(container)
         
