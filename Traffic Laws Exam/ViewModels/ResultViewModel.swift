@@ -26,6 +26,6 @@ struct ResultViewModel {
     }
     
     func saveExam() {
-        DataManager.shared.saveExam(exam: currentExam)
+        DataManager.shared.saveExam()
     }
 }

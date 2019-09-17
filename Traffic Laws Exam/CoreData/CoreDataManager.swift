@@ -141,6 +141,23 @@ class CoreDataManager {
         return managedObjectContext
     }()
     
+    func saveMainContext() {
+        do {
+            try self.mainManagedObjectContext.save()
+        }catch {
+            print("Core Data save error")
+        }
+        if self.privateManagedObjectContext.hasChanges {
+            do {
+                try self.privateManagedObjectContext.save()
+            }catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    
     
     
 }

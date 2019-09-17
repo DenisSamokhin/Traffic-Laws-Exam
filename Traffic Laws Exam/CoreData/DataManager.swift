@@ -53,13 +53,9 @@ class DataManager {
                 sign.categoryId = categoryId.intValue
                 sign.similarSigns = obj[Constants.JSONKeys.similarSigns] as? [Int]
                 if sign.similarSigns == nil {
-                    print("-\n----- DATA SAMPLE ERROR: Similar Signs are missing for sign with ID: \(sign.id) and Title: \(sign.title)")
+                    //print("-\n----- DATA SAMPLE ERROR: Similar Signs are missing for sign with ID: \(sign.id) and Title: \(sign.title)")
                 }
-                do {
-                    try cdManager.mainManagedObjectContext.save()
-                }catch {
-                    print("Core Data save error")
-                }
+                cdManager.saveMainContext()
             }
         }catch {
             
@@ -79,11 +75,7 @@ class DataManager {
                 let category = CategoryModel(context: cdManager.mainManagedObjectContext)
                 category.id = idNum.intValue
                 category.title = title
-                do {
-                    try cdManager.mainManagedObjectContext.save()
-                }catch {
-                    print("Core Data save error")
-                }
+                cdManager.saveMainContext()
             }
         }catch {
             
@@ -114,12 +106,8 @@ class DataManager {
     }
     
     
-    func saveExam(exam: ExamModel) {
-        do {
-            try cdManager.mainManagedObjectContext.save()
-        }catch {
-            print("Core Data save error")
-        }
+    func saveExam() {
+        cdManager.saveMainContext()
     }
     
     func getStoredExams() -> [ExamModel] {
