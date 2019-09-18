@@ -262,6 +262,7 @@ class ExamViewController: UIViewController {
             }
         })
         guard let timer = timer else { return }
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         timer.fire()
     }
     
