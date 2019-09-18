@@ -21,11 +21,20 @@ class ExamViewController: UIViewController {
     var buttonsContainer: UIView?
     var scoreLabel: UILabel?
     var testNumberLabel: UILabel?
+    var timerLabel: UILabel?
+    var timer: Timer?
+    var timePassed: Int {
+        didSet {
+            guard let label = self.timerLabel else { return }
+            label.text = "\(Constants.Settings.testDurationInSeconds - self.timePassed)"
+        }
+    }
     
     
     // MARK: - Initialiation
     
     init(viewModel: ExamViewModel) {
+        self.timePassed = 0
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,6 +61,8 @@ class ExamViewController: UIViewController {
         setSignImageView()
         setScoreLabel()
         setTestNumberLabel()
+        setTimerLabel()
+        setTimer()
     }
     
     func setCloseButton() {
@@ -138,6 +149,11 @@ class ExamViewController: UIViewController {
         btn3.topAnchor.constraint(equalTo: btn2.bottomAnchor, constant: padding).isActive = true
     }
     
+    func buttons() -> [AnswerButton] {
+        guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return [] }
+        return [btn1, btn2, btn3]
+    }
+    
     func setSignImageView() {
         if signImageView != nil { return }
         
@@ -189,6 +205,18 @@ class ExamViewController: UIViewController {
         label.centerYAnchor.constraint(equalTo: scoreLabel.centerYAnchor).isActive = true
     }
     
+    func setTimerLabel() {
+        timerLabel = UILabel()
+        guard let label = timerLabel, let scoreLabel = scoreLabel else { return }
+        label.textAlignment = .center
+        label.text = "\(Constants.Settings.testDurationInSeconds - timePassed)"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        
+        label.centerYAnchor.constraint(equalTo: scoreLabel.centerYAnchor).isActive = true
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
+    
     func changeButtons(enabled: Bool) {
         guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
         btn1.isUserInteractionEnabled = enabled
@@ -203,6 +231,7 @@ class ExamViewController: UIViewController {
         btn3.updateAnswer(answer: test.answers[2])
         iv.image = ImageManager.shared.load(image: test.image)
         testNumLabel.text = viewModel.testNumberString()
+        setTimer()
     }
     
     func updateScoreLabel() {
@@ -222,32 +251,59 @@ class ExamViewController: UIViewController {
         }
     }
     
+    func setTimer() {
+        self.timePassed = -1
+         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (t) in
+            self.timePassed += 1
+            if (self.timePassed == Constants.Settings.testDurationInSeconds) {
+                self.stopTimer()
+                self.changeButtons(enabled: false)
+                self.highlightCorrectAnswer()
+            }
+        })
+        guard let timer = timer else { return }
+        timer.fire()
+    }
+    
+    func stopTimer() {
+        guard let timer = timer else { return }
+        timer.invalidate()
+    }
+    
+    // Show blicking animation
+    func highlightCorrectAnswer() {
+        for btn in buttons() {
+            if btn.answer == viewModel.currentTest().correctAnswer {
+                btn.highlightCorrectAnswer()
+                break
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests, execute: {
+            self.goNext()
+        })
+    }
+    
+    // Fill button with green color
+    func showCorrectAnswer(button: AnswerButton) {
+        button.change(answerType: .correct)
+        viewModel.increaseScore(for: timePassed)
+        updateScoreLabel()
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.correctAnswerHighlightDuration, execute: {
+            self.goNext()
+        })
+    }
+    
     // MARK: - Actions
     
     @objc func answerButtonClicked(button: AnswerButton) {
-        guard let btn1 = button1, let btn2 = button2, let btn3 = button3 else { return }
-        let buttons = [btn1, btn2, btn3]
+        stopTimer()
         changeButtons(enabled: false)
         if button.answer == viewModel.currentTest().correctAnswer {
-            button.change(answerType: .correct)
-            viewModel.increaseScore(for: 1.0)
-            updateScoreLabel()
-            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.correctAnswerHighlightDuration, execute: {
-                self.goNext()
-            })
+            showCorrectAnswer(button: button)
         }else {
             button.change(answerType: .wrong)
-            for btn in buttons {
-                if btn.answer == viewModel.currentTest().correctAnswer {
-                    btn.highlightCorrectAnswer()
-                    break
-                }
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Settings.delayBetweenTests, execute: {
-                self.goNext()
-            })
+            highlightCorrectAnswer()
         }
-        
     }
     
     @objc func closeButtonClicked() {
