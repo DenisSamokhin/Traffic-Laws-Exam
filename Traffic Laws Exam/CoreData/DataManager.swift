@@ -32,6 +32,7 @@ class DataManager {
         parseSignsData()
         parseCategoriesData()
         setCategoriesImages()
+        generateSimilarSigns()
     }
     
     private func parseSignsData() {
@@ -95,6 +96,40 @@ class DataManager {
                     category.image = sign.code
                     cdManager.saveMainContext()
                 }
+            }
+        }
+    }
+    
+    private func generateSimilarSigns() {
+        // If similarSigns is nil or empty,then populate it with signs of its category, exclude signs with the same title
+        let signs = getSignsList(categoryId: 0)
+        for sign in signs {
+            if sign.similarSigns == nil {
+                // Get signs list of the same category
+                let list = getSignsList(categoryId: sign.categoryId)
+                var filteredList = [SignModel]()
+                // Filter the list
+                for item in list {
+                    var exists = false
+                    // Do not include signs with the correct answer title
+                    if item.title == sign.title {
+                        continue
+                    }
+                    for x in filteredList {
+                        // Check if sign already exists in filtered array
+                        if x.title == item.title {
+                            exists = true
+                            break
+                        }
+                    }
+                    if !exists {
+                        // Add sign to filtered list
+                        filteredList.append(item)
+                    }
+                }
+                // Convert list form [SignModel] to [Int] of sign IDs
+                sign.similarSigns = filteredList.map({$0.id})
+                cdManager.saveMainContext()
             }
         }
     }
