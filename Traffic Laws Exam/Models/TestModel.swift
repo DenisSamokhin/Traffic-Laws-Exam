@@ -14,19 +14,23 @@ class TestModel: NSObject, NSCoding {
         aCoder.encode(correctAnswer, forKey: Constants.JSONKeys.correctAnswer)
         aCoder.encode(answers, forKey: Constants.JSONKeys.answers)
         aCoder.encode(image, forKey: Constants.JSONKeys.image)
+        aCoder.encode(Int64(signId), forKey: Constants.JSONKeys.id)
     }
     
     required init?(coder aDecoder: NSCoder) {
         self.correctAnswer = aDecoder.decodeObject(forKey: Constants.JSONKeys.correctAnswer) as! String
         self.answers = aDecoder.decodeObject(forKey: Constants.JSONKeys.answers) as! [String]
         self.image = aDecoder.decodeObject(forKey: Constants.JSONKeys.image) as! String
+        self.signId = Int(aDecoder.decodeInt64(forKey: Constants.JSONKeys.id))
     }
     
     var answers: [String]
     var correctAnswer: String
     var image: String
+    var signId: Int
     
     init(sign object: SignModel) {
+        self.signId = object.id
         self.correctAnswer = object.title
         self.image = object.image
         var otherAnswers = object.answers().subListWithRandomElements(maxLimit: Constants.Settings.maxAnswersCountInTest - 1) // MaxLimit - 1 because we need to reserve 1 slot for the correct answer
