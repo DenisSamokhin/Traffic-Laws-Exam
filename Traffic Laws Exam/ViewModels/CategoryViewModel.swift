@@ -19,10 +19,7 @@ struct CategoriesViewModel {
     }
     
     var categoriesTitles: [String] {
-        var list = [String]()
-        for model in self.categoriesList {
-            list.append(model.title)
-        }
+        var list = self.categoriesList.map({$0.title})
         // Add "All categories" option
         list.append(Constants.ButtonTitles.allCategories)
         return list
