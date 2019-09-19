@@ -27,6 +27,8 @@ class CoreDataManager {
         if category != 0 {
             let predicate = NSPredicate(format: "categoryId == %d", category)
             request.predicate = predicate
+            let sort = NSSortDescriptor(key: #keyPath(SignModel.id), ascending: true)
+            request.sortDescriptors = [sort]
         }
         do {
             let result = try self.mainManagedObjectContext.fetch(request)
