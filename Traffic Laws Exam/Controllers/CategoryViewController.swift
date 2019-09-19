@@ -83,7 +83,11 @@ extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
         cell.titleLabel.text = (indexPath.section == 1) ? viewModel.categoriesTitles.last : viewModel.categoriesTitles[indexPath.row]
-        cell.imageView.image = UIImage(named: "test-sign-image")
+        if let imgName = (indexPath.section == 1) ? viewModel.categoriesImages.last : viewModel.categoriesImages[indexPath.row], imgName != "" {
+            cell.imageView.image = ImageManager.shared.load(image: imgName)
+        }else {
+            cell.imageView.image = UIImage(named: Constants.ImageNames.categoriesPlaceholderImage)
+        }
         return cell
     }
 }

@@ -31,6 +31,7 @@ class DataManager {
     func parseSampleData() {
         parseSignsData()
         parseCategoriesData()
+        setCategoriesImages()
     }
     
     private func parseSignsData() {
@@ -77,10 +78,24 @@ class DataManager {
                 let category = CategoryModel(context: cdManager.mainManagedObjectContext)
                 category.id = idNum.intValue
                 category.title = title
+                category.image = ""
                 cdManager.saveMainContext()
             }
         }catch {
             
+        }
+    }
+    
+    private func setCategoriesImages() {
+        let categories = getCategoriesList()
+        for category in categories {
+            let signs = getSignsList(categoryId: category.id)
+            if signs.count > 0 {
+                if let sign = signs.first {
+                    category.image = sign.code
+                    cdManager.saveMainContext()
+                }
+            }
         }
     }
     

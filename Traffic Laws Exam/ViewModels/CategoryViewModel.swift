@@ -29,10 +29,7 @@ struct CategoriesViewModel {
     }
     
     var categoriesImages: [String] {
-        var list = [String]()
-        for model in self.categoriesList {
-            list.append(model.title)
-        }
+        var list = self.categoriesList.map({$0.image})
         // Add image name for "All categories" option
         list.append(Constants.ImageNames.allCategoriesImage)
         return list

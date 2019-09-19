@@ -58,7 +58,20 @@ class CoreDataManager {
             let result = try self.mainManagedObjectContext.fetch(request)
             return result.first
         }catch {
-            print("getSignsList() FAILED")
+            print("getSign() FAILED")
+            return nil
+        }
+    }
+    
+    func getCategory(id: Int) -> CategoryModel? {
+        let request = NSFetchRequest<CategoryModel>(entityName: Constants.CoreDataKeys.categories)
+        let predicate = NSPredicate(format: "id == %d", id)
+        request.predicate = predicate
+        do {
+            let result = try self.mainManagedObjectContext.fetch(request)
+            return result.first
+        }catch {
+            print("getCategory() FAILED")
             return nil
         }
     }

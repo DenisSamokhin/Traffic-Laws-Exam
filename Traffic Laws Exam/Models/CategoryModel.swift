@@ -13,4 +13,5 @@ import CoreData
 class CategoryModel: NSManagedObject {
     @NSManaged var id: Int
     @NSManaged var title: String
+    @NSManaged var image: String
 }
