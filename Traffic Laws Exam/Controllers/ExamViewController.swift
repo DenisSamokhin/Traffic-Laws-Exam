@@ -299,6 +299,7 @@ class ExamViewController: UIViewController {
     @objc func answerButtonClicked(button: AnswerButton) {
         stopTimer()
         changeButtons(enabled: false)
+        viewModel.currentTest().selectedAnswer = button.answer
         if button.answer == viewModel.currentTest().correctAnswer {
             showCorrectAnswer(button: button)
         }else {

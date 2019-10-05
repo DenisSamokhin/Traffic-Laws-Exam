@@ -46,6 +46,7 @@ struct Constants {
         static var sign = "sign"
         static var answers = "answers"
         static var correctAnswer = "correctAnswer"
+        static var selectedAnswer = "selectedAnswer"
     }
     
     struct CoreDataKeys {
