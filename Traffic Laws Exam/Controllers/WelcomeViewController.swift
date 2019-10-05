@@ -58,10 +58,13 @@ class WelcomeViewController: UIViewController {
     
     @objc func goToProfile() {
         let exams = DataManager.shared.getStoredExams()
-        exams.forEach({
-            print($0.datePassed)
-            
-        })
+        for exam in exams {
+            print(exam.datePassed)
+            exam.tests.forEach({
+                print("--Correct: " + $0.correctAnswer)
+                print("--Selected: " + ($0.selectedAnswer ?? ""))
+            })
+        }
     }
     
     // MARK: -
