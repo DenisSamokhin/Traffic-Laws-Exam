@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class CategoryViewController: UIViewController {
     
@@ -34,11 +35,18 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Constants.Colors.violet
+        setUI()
+        self.animate()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setUI()
+        
     }
     
     // MARK: - UI
@@ -94,6 +102,18 @@ class CategoryViewController: UIViewController {
     
     private func twoSectionMode() -> Bool {
         return self.viewModel.categoriesTitles.count % 2 != 0
+    }
+    
+    func animate() {
+        let zoomAnimation = AnimationType.zoom(scale: 0.01)
+        let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/6)
+        guard let cv = collectionView else { return }
+        cv.reloadData()
+        cv.performBatchUpdates({
+            UIView.animate(views: cv.orderedVisibleCells,
+                           animations: [rotateAnimation, zoomAnimation], animationInterval: 0.2, duration: 0.8, completion: {
+                })
+        }, completion: nil)
     }
 
 }

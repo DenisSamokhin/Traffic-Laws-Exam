@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class WelcomeViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orange
         setUI()
+        animate()
     }
     
     // MARK: - UI
@@ -66,6 +68,13 @@ class WelcomeViewController: UIViewController {
         profileButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 40).isActive = true
         profileButton.widthAnchor.constraint(equalTo: examButton.widthAnchor).isActive = true
         profileButton.heightAnchor.constraint(equalTo: examButton.heightAnchor).isActive = true
+    }
+    
+    func animate() {
+        let fromRightAnimation = AnimationType.from(direction: .right, offset: 300.0)
+
+        UIView.animate(views: [examButton], animations: [fromRightAnimation], duration: 0.8)
+        UIView.animate(views: [profileButton], animations: [fromRightAnimation], delay: 0.4, duration: 0.8)
     }
 
     // MARK: - Navigation
