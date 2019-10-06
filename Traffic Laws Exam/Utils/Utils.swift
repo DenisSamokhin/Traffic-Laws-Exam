@@ -66,6 +66,10 @@ struct Constants {
         static var bgImage = "bg-image"
     }
     
+    struct Colors {
+        static var violet = UIColor.init(hexString: "#8f1eb0")
+    }
+    
     struct Settings {
         static var maxTestsCountInExam = 10
         static var maxAnswersCountInTest = 3

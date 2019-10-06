@@ -13,6 +13,8 @@ class CategoryViewController: UIViewController {
     let cellId = "CategoryCellIdentifier"
     var viewModel: CategoriesViewModel
     weak var coordinator: MainCoordinator?
+    var bgImageView: UIImageView?
+    let cellPadding: CGFloat = 10.0
     
     private var collectionView: UICollectionView?
     
@@ -31,7 +33,7 @@ class CategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Constants.Colors.violet
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,7 +44,25 @@ class CategoryViewController: UIViewController {
     // MARK: - UI
     
     func setUI() {
+        //setBgImageView()
         setCollectionView()
+    }
+    
+    func setBgImageView() {
+        if bgImageView != nil { return }
+        
+        guard let img = UIImage(named: Constants.ImageNames.bgImage) else { return }
+        let iv = UIImageView(image: img)
+        iv.contentMode = .scaleAspectFill
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(iv)
+        
+        iv.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        iv.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        iv.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        iv.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
+        
+        bgImageView = iv
     }
     
     func setCollectionView() {
@@ -50,9 +70,9 @@ class CategoryViewController: UIViewController {
         if collectionView != nil { return }
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: cellPadding, left: cellPadding, bottom: cellPadding, right: cellPadding)
         layout.minimumInteritemSpacing = 0;
-        layout.minimumLineSpacing = 0;
+        layout.minimumLineSpacing = cellPadding * 2;
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         guard let cv = collectionView, let view = self.view else { return }
@@ -112,7 +132,7 @@ extension CategoryViewController: UICollectionViewDelegate {
 
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = self.view.frame.size.width / 2
+        let itemWidth = self.view.frame.size.width / 2 - cellPadding * 2
         let itemHeight = itemWidth * 0.8
         return (twoSectionMode()) ? ((indexPath.section == 1) ? CGSize(width: collectionView.frame.size.width, height: itemHeight) : CGSize(width: itemWidth, height: itemHeight)) : CGSize(width: itemWidth, height: itemHeight)
     }
