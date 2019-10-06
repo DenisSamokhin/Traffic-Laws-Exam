@@ -12,6 +12,7 @@ class WelcomeViewController: UIViewController {
     
     let examButton = DefaultButton(title: "Начать тест")
     let profileButton = DefaultButton(title: "Мои результаты")
+    var bgImageView: UIImageView?
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
@@ -23,8 +24,26 @@ class WelcomeViewController: UIViewController {
     // MARK: - UI
     
     func setUI() {
+        setBgImageView()
         setupExamButton()
         setupProfileButton()
+    }
+    
+    func setBgImageView() {
+        if bgImageView != nil { return }
+        
+        guard let img = UIImage(named: Constants.ImageNames.bgImage) else { return }
+        let iv = UIImageView(image: img)
+        iv.contentMode = .scaleAspectFill
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(iv)
+        
+        iv.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        iv.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        iv.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        iv.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
+        
+        bgImageView = iv
     }
     
     func setupExamButton() {

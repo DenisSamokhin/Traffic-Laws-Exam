@@ -63,6 +63,7 @@ struct Constants {
     struct ImageNames {
         static var allCategoriesImage = "1.1"
         static var categoriesPlaceholderImage = "test-sign-image"
+        static var bgImage = "bg-image"
     }
     
     struct Settings {
