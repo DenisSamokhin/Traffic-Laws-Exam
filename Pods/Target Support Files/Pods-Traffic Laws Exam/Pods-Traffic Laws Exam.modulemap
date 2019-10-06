@@ -1,0 +1,6 @@
+framework module Pods_Traffic_Laws_Exam {
+  umbrella header "Pods-Traffic Laws Exam-umbrella.h"
+
+  export *
+  module * { export * }
+}
